@@ -1,0 +1,27 @@
+# Dependencies and generated Next.js/build artifacts
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Real environment files; only the empty example is versioned
+.env
+.env.*
+!.env.example
+
+# Deployment/local database state
+.vercel/
+supabase/.temp/
+supabase/.branches/
+
+# Test output and local logs
+coverage/
+playwright-report/
+test-results/
+.vitest/
+*.log
+
+# Local/editor state; project-wide editor settings can be added deliberately
+.DS_Store
