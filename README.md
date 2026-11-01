@@ -1,6 +1,6 @@
 # Cookly
 
-Fundație pentru Cookly, cu Next.js App Router, React, TypeScript strict, Tailwind CSS și primitive shadcn/ui. Etapa 2 include numai shell-ul aplicației, teme și tooling; nu există features de business, autentificare activă, conexiune Supabase sau migrații.
+Fundație pentru Cookly, cu Next.js App Router, React, TypeScript strict, Tailwind CSS și primitive shadcn/ui. Etapa 2 include shell-ul, teme, tooling și un design system reutilizabil; nu există features de business, autentificare activă, conexiune Supabase sau migrații.
 
 **Starea verificării:** sursele și configurarea sunt create. Instalarea pnpm/dependențelor așteaptă aprobarea accesului la registry în afara sandboxului. Build-ul, pornirea și testele care folosesc pachete externe nu sunt încă verificate. Rezultatele exacte sunt în [SETUP-VERIFICATION.md](docs/architecture/SETUP-VERIFICATION.md).
 
@@ -35,6 +35,7 @@ Adresă implicită: `http://127.0.0.1:3000`. Un alt port se poate selecta cu `pn
 | `pnpm format` / `pnpm format:check` | Prettier; documentele istorice de produs/arhitectură sunt păstrate |
 | `pnpm test` | Teste Node pentru mediu și reguli de import |
 | `pnpm test:architecture` | Testele regulii locale de import, fără servicii externe |
+| `pnpm test:ui` | Teste native pentru filtrare, navigare combobox, etichete și contrastul tokenurilor |
 | `pnpm test:watch` | Aceleași teste, în watch mode |
 | `pnpm test:e2e` | Playwright: teme, persistență, hidratare, tastatură și 404 |
 | `pnpm check` | Format, lint, typecheck și teste unitare/de arhitectură |
@@ -86,6 +87,22 @@ Regula ESLint locală verifică importuri/reexporturi statice și importuri dina
 - [Structura țintă și convenții](docs/architecture/PROJECT-STRUCTURE.md)
 - [Planul fundației](docs/architecture/SETUP-PLAN.md)
 - [Verificări și limitări reale](docs/architecture/SETUP-VERIFICATION.md)
+- [Design system: tokenuri, props și exemple](docs/design/DESIGN-SYSTEM.md)
+- [Verificările UI kitului](docs/design/UI-KIT-VERIFICATION.md)
+
+## Design system și UI kit
+
+Galeria `/ui-kit` demonstrează butoane, câmpuri, combobox, tag/chip, compatibilitate, carduri de rețete, modal/drawer, toast, skeleton, empty/error states și navigare responsive. Are `noindex`, folosește date fictive și păstrează interacțiunile numai în memoria paginii. Pagina principală existentă este păstrată.
+
+Componentele sunt în `src/components/{ui,feedback,layout,recipes}`; pagina de prezentare este în `components/design-system`. Tokenurile semantice light/dark sunt în `src/styles/globals.css`. Acest kit adaugă Radix Dialog pentru focus/dismiss modal, Radix Popover pentru sugestii poziționate și Sonner pentru toast; nu adaugă un motor de matching sau dependențe de features. Detaliile API și limitele accesibilității sunt în documentul de design.
+
+Verificare disponibilă fără instalarea dependențelor:
+
+```sh
+node --test tests/ui-kit/*.test.* tests/architecture/import-boundaries.test.mjs
+```
+
+Rezultatul curent este 14 teste trecute (6 UI/tokenuri și 8 de import). Acesta nu include mediul Zod sau testele browser. Testele Playwright pentru UI kit sunt definite în `tests/e2e/ui-kit.spec.ts`, dar nu sunt încă executate.
 
 Runnerul nativ Node înlocuiește propunerea opțională Vitest numai pentru testele acestei fundații; Playwright rămâne verificarea în browser. Documentele istorice nu pretind că toate fișierele arborelui țintă sunt deja implementate.
 

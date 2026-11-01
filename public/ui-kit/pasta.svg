@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <title>Ilustrație originală de paste cu roșii și busuioc</title>
+  <rect width="640" height="480" fill="#f1e7d8"/>
+  <ellipse cx="320" cy="269" rx="203" ry="149" fill="#ded0bb"/>
+  <ellipse cx="320" cy="240" rx="207" ry="156" fill="#fffefa"/>
+  <ellipse cx="320" cy="240" rx="166" ry="119" fill="#ba593f"/>
+  <g fill="none" stroke="#e9bb65" stroke-width="12" stroke-linecap="round"><path d="M204 227q47-76 108-31t109 9M211 260q38-72 112-36t105 8M233 294q29-59 92-39t88 12M254 168q69 69 115-7M266 321q-7-67 57-102t74-10M194 247q20 70 95 59t113-44"/></g>
+  <g fill="#ce6548" stroke="#a94632" stroke-width="3"><circle cx="241" cy="213" r="23"/><circle cx="380" cy="271" r="25"/><circle cx="333" cy="183" r="20"/></g>
+  <g fill="#3e7044"><path d="M288 241q-47-65 10-72 38 31-10 72Z"/><path d="M300 242q41-64 76-27-4 47-76 27Z"/><path d="M283 251q-69-19-58 35 40 31 58-35Z"/></g>
+  <g stroke="#fff4c9" stroke-width="4" stroke-linecap="round"><path d="m269 291 16 6m64-59 16 7m-5-36 11-8m-63 73 14 3m-74-32 13 8m95 44 14-5"/></g>
+  <path d="M531 100q-38 0-35 40t33 23l-8 175" fill="none" stroke="#8d8170" stroke-width="9" stroke-linecap="round"/>
+</svg>

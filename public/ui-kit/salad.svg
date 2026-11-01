@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <title>Ilustrație originală de salată cu năut și verdețuri</title>
+  <rect width="640" height="480" fill="#e7eee8"/>
+  <ellipse cx="320" cy="264" rx="210" ry="157" fill="#cdd9ce"/>
+  <ellipse cx="320" cy="240" rx="211" ry="158" fill="#fffefa"/>
+  <ellipse cx="320" cy="240" rx="168" ry="119" fill="#e7eee0"/>
+  <g fill="#477d4f"><path d="M190 229q-25-89 72-75 10 69-72 75Z"/><path d="M339 185q54-76 104-13-18 68-104 13Z"/><path d="M302 300q-90 54-103-23 50-49 103 23Z"/><path d="M382 286q-12 72 66 34 22-51-66-34Z"/></g>
+  <g fill="#86a76a"><path d="M255 229q-54-61 17-83 61 36-17 83Z"/><path d="M347 285q-3-86 74-68 31 64-74 68Z"/><path d="M302 267q-67-51-13-83 70 18 13 83Z"/></g>
+  <g fill="#d8be77" stroke="#b59a56" stroke-width="2"><circle cx="236" cy="246" r="14"/><circle cx="281" cy="294" r="13"/><circle cx="342" cy="228" r="14"/><circle cx="398" cy="250" r="13"/><circle cx="319" cy="175" r="12"/><circle cx="352" cy="313" r="12"/><circle cx="215" cy="291" r="11"/></g>
+  <g fill="#c45b44"><circle cx="232" cy="188" r="23"/><circle cx="366" cy="191" r="24"/><circle cx="327" cy="281" r="24"/></g>
+  <g fill="none" stroke="#f6c39d" stroke-width="3"><path d="m220 187 22 2m-11-12 1 22"/><path d="m355 189 22 4m-10-13-2 22"/><path d="m315 282 24-2m-12-10 1 22"/></g>
+  <path d="m497 66 11 63m-1-70 11 69m-2-71 11 68m-22 3 15-3 34 197" fill="none" stroke="#788d80" stroke-width="6" stroke-linecap="round"/>
+</svg>

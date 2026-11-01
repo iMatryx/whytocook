@@ -10,6 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive: "bg-danger text-danger-foreground hover:bg-danger/80",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
@@ -25,9 +27,17 @@ const buttonVariants = cva(
   },
 );
 
-function Button({ className, variant, size, asChild = false, ...props }: ComponentProps<"button"> & VariantProps<typeof buttonVariants> & { asChild?: boolean }) {
-  const Comp = asChild ? Slot : "button";
-  return <Comp data-slot="button" className={cn(buttonVariants({ variant, size, className }))} {...props} />;
+export type ButtonProps = ComponentProps<"button"> & VariantProps<typeof buttonVariants> & ({ asChild: true; loading?: never; disabled?: never } | { asChild?: false; loading?: boolean });
+
+function Button({ className, variant, size, asChild = false, loading = false, disabled, children, type, ...props }: ButtonProps) {
+  const styles = cn(buttonVariants({ variant, size, className }));
+  if (asChild) return <Slot data-slot="button" className={styles} {...props}>{children}</Slot>;
+  return (
+    <button data-slot="button" type={type ?? "button"} className={styles} disabled={disabled || loading} aria-busy={loading || undefined} {...props}>
+      {loading && <span aria-hidden="true" className="size-4 rounded-full border-2 border-current border-t-transparent motion-safe:animate-spin" />}
+      {children}
+    </button>
+  );
 }
 
 export { Button, buttonVariants };

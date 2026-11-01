@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24.14.0 <25" },
+  "engines": {
+    "node": ">=24.14.0 <25"
+  },
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
@@ -12,14 +14,17 @@
     "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "node --test src/config/env/schema.test.ts tests/architecture/import-boundaries.test.mjs",
+    "test": "node --test src/config/env/schema.test.ts tests/architecture/import-boundaries.test.mjs tests/ui-kit/*.test.*",
+    "test:ui": "node --test tests/ui-kit/*.test.*",
     "test:architecture": "node --test tests/architecture/import-boundaries.test.mjs",
     "test:unit": "node --test src/config/env/schema.test.ts",
-    "test:watch": "node --test --watch src/config/env/schema.test.ts tests/architecture/import-boundaries.test.mjs",
+    "test:watch": "node --test --watch src/config/env/schema.test.ts tests/architecture/import-boundaries.test.mjs tests/ui-kit/*.test.*",
     "test:e2e": "playwright test",
     "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.0",
+    "@radix-ui/react-popover": "^1.1.0",
     "@radix-ui/react-slot": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -28,6 +33,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "server-only": "^0.0.1",
+    "sonner": "^2.0.0",
     "tailwind-merge": "^3.0.0",
     "zod": "^4.0.0"
   },
