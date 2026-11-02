@@ -10,7 +10,9 @@ const check = (file, imported) => checkImportBoundary(path.join(root, file), imp
 describe("import boundaries", () => {
   it("blocks client imports of server code through aliases and relative paths", () => {
     assert.ok(check("src/components/theme/theme-control.tsx", "@/config/env/server"));
-    assert.ok(check("src/components/theme/theme-control.tsx", "../../server/composition/create-services"));
+    assert.ok(
+      check("src/components/theme/theme-control.tsx", "../../server/composition/create-services"),
+    );
   });
 
   it("blocks SDKs and frameworks inside feature domains", () => {
@@ -20,14 +22,35 @@ describe("import boundaries", () => {
   });
 
   it("blocks deep imports between features, including relative paths", () => {
-    assert.ok(check("src/features/pantry/application/create-lot.service.ts", "@/features/ingredients/infrastructure/repository"));
-    assert.ok(check("src/features/pantry/application/create-lot.service.ts", "../../ingredients/server"));
-    assert.equal(check("src/features/pantry/application/create-lot.service.ts", "@/features/ingredients/contracts"), null);
+    assert.ok(
+      check(
+        "src/features/pantry/application/create-lot.service.ts",
+        "@/features/ingredients/infrastructure/repository",
+      ),
+    );
+    assert.ok(
+      check("src/features/pantry/application/create-lot.service.ts", "../../ingredients/server"),
+    );
+    assert.equal(
+      check(
+        "src/features/pantry/application/create-lot.service.ts",
+        "@/features/ingredients/contracts",
+      ),
+      null,
+    );
   });
 
   it("checks the public contracts dependency direction", () => {
-    assert.ok(check("src/features/ingredients/contracts/ingredient.schema.ts", "@/features/recipes/contracts"));
-    assert.equal(check("src/features/recipes/contracts/recipe.schema.ts", "@/features/ingredients/contracts"), null);
+    assert.ok(
+      check(
+        "src/features/ingredients/contracts/ingredient.schema.ts",
+        "@/features/recipes/contracts",
+      ),
+    );
+    assert.equal(
+      check("src/features/recipes/contracts/recipe.schema.ts", "@/features/ingredients/contracts"),
+      null,
+    );
   });
 
   it("keeps route adapters away from repositories", () => {
@@ -42,16 +65,40 @@ describe("import boundaries", () => {
 
   it("protects shared, workflow and infrastructure boundaries", () => {
     assert.ok(check("src/shared/contracts/index.ts", "@/config/env/maintenance"));
-    assert.ok(check("src/shared/domain/quantity.ts", "@/features/pantry/infrastructure/repository"));
-    assert.ok(check("src/features/pantry/infrastructure/repository.ts", "@/server/composition/create-services"));
+    assert.ok(
+      check("src/shared/domain/quantity.ts", "@/features/pantry/infrastructure/repository"),
+    );
+    assert.ok(
+      check(
+        "src/features/pantry/infrastructure/repository.ts",
+        "@/server/composition/create-services",
+      ),
+    );
     assert.ok(check("src/workflows/application/confirm.service.ts", "@supabase/supabase-js"));
     assert.equal(check("src/shared/contracts/index.ts", "zod"), null);
-    assert.equal(check("src/features/pantry/infrastructure/repository.ts", "@/server/supabase/create-user-client"), null);
+    assert.equal(
+      check(
+        "src/features/pantry/infrastructure/repository.ts",
+        "@/server/supabase/create-user-client",
+      ),
+      null,
+    );
   });
 
   it("prevents infrastructure UI dependencies and private workflow contract imports", () => {
     assert.ok(check("src/features/pantry/infrastructure/repository.ts", "../presentation/client"));
-    assert.ok(check("src/workflows/application/confirm.service.ts", "@/features/pantry/contracts/internal"));
-    assert.equal(check("src/workflows/application/confirm.service.ts", "@/features/pantry/contracts"), null);
+    assert.ok(
+      check("src/workflows/application/confirm.service.ts", "@/features/pantry/contracts/internal"),
+    );
+    assert.equal(
+      check("src/workflows/application/confirm.service.ts", "@/features/pantry/contracts"),
+      null,
+    );
+  });
+
+  it("allows explicitly server-rendered shell components while protecting client islands", () => {
+    assert.equal(check("src/components/layout/app-shell.server.tsx", "server-only"), null);
+    assert.equal(check("src/components/layout/app-shell.server.tsx", "@/config/env/server"), null);
+    assert.ok(check("src/components/layout/mobile-navigation.tsx", "@/config/env/server"));
   });
 });
