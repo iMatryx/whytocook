@@ -5,20 +5,22 @@ Nu reprezintă validare de producție sau aplicarea migrațiilor pe un proiect c
 
 ## Rezultate reale
 
-| Comandă                           | Rezultat                                                                                                                                    |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm test`                        | PASS: 28 teste existente + 21 de securitate/Auth = 49, zero eșecuri                                                                         |
-| `npm run test:security`           | PASS: 21; Auth și Data API sunt stub-uri HTTP la limita externă                                                                             |
-| `npm run lint`                    | PASS, exit 0                                                                                                                                |
-| `npm run typecheck`               | PASS, exit 0; Next typegen și TypeScript strict                                                                                             |
-| `npm run build -- --webpack`      | PASS, build de producție; rutele și proxy-ul sunt compilate fără credențiale                                                                |
-| `npm run test:prerender`          | PASS: nouă rute private/contextuale sunt dinamice și nu au HTML static; manifestele conțin rutele publice                                   |
-| `npm run test:access-routes`      | PASS: un smoke în proces pe handlerii compilați; Bearer/cookie criptat, cookie invalid, rol/MFA, erori și no-store                          |
-| `npm run test:e2e -- --list`      | PASS: 26 de cazuri colectate, **nu executate**                                                                                              |
-| `npm run test:e2e -- --workers=1` | FAIL înaintea browserului: serverul nu poate asculta pe 127.0.0.1:3100, `listen EPERM`; reîncercarea cu aprobare este în așteptare          |
-| `npm run test:db`                 | FAIL înaintea inițializării: ambele module raportează `ERR_MODULE_NOT_FOUND` pentru PGlite; nicio migrație sau politică nu a fost executată |
-| Instalare PGlite                  | Prima încercare: `ENOTFOUND registry.npmjs.org`; reîncercarea cu acces de rețea este în așteptarea aprobării                                |
-| PostgreSQL/Supabase local         | CLI și binarele PostgreSQL lipsesc; Docker CLI există, daemonul nu are socket activ                                                         |
+| Comandă                                                     | Rezultat                                                                                                                                    |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm test`                                                  | PASS: 28 teste existente + 21 de securitate/Auth = 49, zero eșecuri                                                                         |
+| Prettier pe cele 64 de fișiere schimbate cu format suportat | PASS; SQL/TOML nu sunt validate de acest check                                                                                              |
+| `git diff --check`                                          | PASS                                                                                                                                        |
+| `npm run test:security`                                     | PASS: 21; Auth și Data API sunt stub-uri HTTP la limita externă                                                                             |
+| `npm run lint`                                              | PASS, exit 0                                                                                                                                |
+| `npm run typecheck`                                         | PASS, exit 0; Next typegen și TypeScript strict                                                                                             |
+| `npm run build -- --webpack`                                | PASS, build de producție; rutele și proxy-ul sunt compilate fără credențiale                                                                |
+| `npm run test:prerender`                                    | PASS: nouă rute private/contextuale sunt dinamice și nu au HTML static; manifestele conțin rutele publice                                   |
+| `npm run test:access-routes`                                | PASS: un smoke în proces pe handlerii compilați; Bearer/cookie criptat, cookie invalid, rol/MFA, erori și no-store                          |
+| `npm run test:e2e -- --list`                                | PASS: 26 de cazuri colectate, **nu executate**                                                                                              |
+| `npm run test:e2e -- --workers=1`                           | FAIL înaintea browserului: serverul nu poate asculta pe 127.0.0.1:3100, `listen EPERM`; reîncercarea cu aprobare este în așteptare          |
+| `npm run test:db`                                           | FAIL înaintea inițializării: ambele module raportează `ERR_MODULE_NOT_FOUND` pentru PGlite; nicio migrație sau politică nu a fost executată |
+| Instalare PGlite                                            | Prima încercare: `ENOTFOUND registry.npmjs.org`; reîncercarea cu acces de rețea este în așteptarea aprobării                                |
+| PostgreSQL/Supabase local                                   | CLI și binarele PostgreSQL lipsesc; Docker CLI există, daemonul nu are socket activ                                                         |
 
 Formatarea fișierelor schimbate și verificarea whitespace sunt rulate separat;
 nu validează sintaxa SQL sau compatibilitatea configurației CLI. Încercarea de
@@ -78,7 +80,7 @@ instalat CLI și configurat stackul conform [AUTH-PROFILE.md](AUTH-PROFILE.md).
 1. Migrații complete pe un stack local nou, grants, RLS forțat pe toate cele 37
    de tabele și numai `api` în Exposed Schemas. Verifică și Security Advisor.
 2. Signup → email local → confirmare → login, browser redeschis, refresh, logout;
-   parolă uitată și link expirat/utilizat, inclusiv cont cu TOTP/AAL2.
+   parolă uitată și link expirat/utilizat, inclusiv cont cu TOTP/AAL2; după logout verifică și butonul Back.
 3. Profil A/B, payload cu owner/role fals și FK străin; salvare/rollback, buget
    per masă, monedă, dietă, alergeni, echipamente și persoane.
 4. Concurență între taburi pentru refresh și scrieri DB; revocare de rol/status;

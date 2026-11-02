@@ -10,6 +10,7 @@ describe("shell routing", () => {
     const expected = [
       "/",
       "/recipes",
+      "/ingredients",
       "/my-fridge",
       "/meal-planner",
       "/shopping-list",
@@ -23,7 +24,7 @@ describe("shell routing", () => {
       shellNavigation.map((item) => item.href),
       expected,
     );
-    assert.equal(new Set(shellNavigation.map((item) => item.href)).size, 10);
+    assert.equal(new Set(shellNavigation.map((item) => item.href)).size, 11);
   });
 
   it("matches full segments and does not mark home or similar prefixes as active", () => {

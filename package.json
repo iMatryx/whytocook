@@ -14,7 +14,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "node --test src/config/env/schema.test.ts tests/architecture/import-boundaries.test.mjs tests/ui-kit/*.test.* tests/shell/*.test.ts && npm run test:security",
+    "test": "node --test src/config/env/schema.test.ts tests/architecture/import-boundaries.test.mjs tests/ui-kit/*.test.* tests/shell/*.test.ts && npm run test:security && npm run test:ingredients",
     "test:ui": "node --test tests/ui-kit/*.test.*",
     "test:architecture": "node --test tests/architecture/import-boundaries.test.mjs",
     "test:unit": "node --test src/config/env/schema.test.ts",
@@ -25,7 +25,9 @@
     "test:prerender": "node tests/shell/prerender.smoke.mjs",
     "test:db": "node --test tests/database/*.test.mjs",
     "test:security": "node --conditions=react-server --test tests/security/*.test.ts",
-    "test:access-routes": "node --conditions=react-server --test tests/security/routes.smoke.mjs"
+    "test:access-routes": "node --conditions=react-server --test tests/security/routes.smoke.mjs",
+    "test:ingredients": "node --conditions=react-server --test tests/ingredients/*.test.ts",
+    "test:ingredient-routes": "node --conditions=react-server --test tests/ingredients/routes.smoke.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.0",

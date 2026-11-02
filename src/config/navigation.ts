@@ -10,6 +10,7 @@ export type ShellNavigationItem = {
 export const shellNavigation = [
   { href: "/", label: "Acasă", icon: "home", group: "discover" },
   { href: "/recipes", label: "Rețete", icon: "book", group: "discover" },
+  { href: "/ingredients", label: "Ingrediente", icon: "leaf", group: "discover" },
   { href: "/my-fridge", label: "Frigiderul meu", icon: "fridge", group: "organize" },
   { href: "/meal-planner", label: "Planificator de mese", icon: "calendar", group: "organize" },
   { href: "/shopping-list", label: "Lista de cumpărături", icon: "basket", group: "organize" },

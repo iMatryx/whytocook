@@ -51,7 +51,7 @@ test("mobile menu includes every route, restores focus and closes on navigation"
   const trigger = page.getByRole("button", { name: "Deschide meniul Cookly" });
   await trigger.click();
   const menu = page.getByRole("dialog", { name: "Navigare Cookly", exact: true });
-  await expect(menu.getByRole("link")).toHaveCount(10);
+  await expect(menu.getByRole("link")).toHaveCount(11);
   await expect(menu.getByRole("link", { name: "Rețete", exact: true })).toHaveAttribute(
     "aria-current",
     "page",

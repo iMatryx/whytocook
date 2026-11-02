@@ -32,9 +32,9 @@ PROJECT-STRUCTURE.md and docs/database/SCHEMA.md.
 
 ## Task 1 — SQL authorization and isolation
 
-- [ ] Add failing SQL isolation scenarios (auth.uid/JWT fixture, roles and Storage).
+- [x] Add SQL isolation scenarios (auth.uid/JWT fixture, roles and Storage).
 - [ ] Run against pre-access schema to observe denial of intended own-user access.
-- [ ] Add migrations 05 (roles/helpers/policies/views/provisioning), 06 (RPCs),
+- [x] Add migrations 05 (roles/helpers/policies/views/provisioning), 06 (RPCs),
       07 (Storage). REVOKE EXECUTE in each migration; no dynamic SQL from user input.
 - [ ] Test public/draft visibility, cross-owner reads/writes, self-promotion,
       suspended accounts, direct writes, optimistic revisions and editorial MFA.
@@ -44,11 +44,11 @@ tests/database/access-bootstrap.sql, access.test.mjs and existing schema runner.
 
 ## Task 2 — Server access boundary
 
-- [ ] Add failing tests for verified actor, mismatched subject, provider errors,
+- [x] Add tests for verified actor, mismatched subject, provider errors,
       live role changes, malicious metadata, storage paths and safe error mapping.
-- [ ] Implement server-only per-request REST transport, Zod actor contract,
+- [x] Implement server-only per-request REST transport, Zod actor contract,
       requireRole and own-resource checks; expose a no-store auth-context GET endpoint.
-- [ ] Run Node server tests, project tests, lint and strict typecheck.
+- [x] Run Node server tests, project tests, lint and strict typecheck.
 
 Files: src/shared/contracts/actor.schema.ts; src/server/supabase/_.server.ts;
 src/server/auth/_.server.ts; src/server/http/access-response.server.ts;
@@ -56,12 +56,14 @@ src/app/api/v1/auth/context/route.ts; tests/security/*.test.ts.
 
 ## Task 3 — Local configuration, documentation and verification
 
-- [ ] Add supabase/config.toml (only api exposed, Auth redirects/email/MFA,
+- [x] Add supabase/config.toml (only api exposed, Auth redirects/email/MFA,
       private bucket limits) and document migration/reset commands for disposable local DB.
-- [ ] Update .env.example, README and access security/verification docs; distinguish
+- [x] Update .env.example, README and access security/verification docs; distinguish
       SQL execution from HTTP/Auth/Storage integration and multi-session tests.
-- [ ] Request independent security review, fix findings, rerun affected checks.
-- [ ] Report actual commands, limitations and manual verification; stop at this stage.
+- [x] Request independent security review, fix findings, rerun affected checks.
+- [x] Report actual commands, limitations and manual verification; stop at this stage.
 
 No production changes or secrets are needed. Configuring a hosted project and
 end-to-end signup/session refresh need an authorized project and running services.
+
+SQL test execution remains blocked by unavailable PGlite/network approval; no SQL pass is claimed. Auth/profile is the subsequent explicit user request, documented in AUTH-PROFILE-PLAN.md.

@@ -2,10 +2,11 @@
 
 Cookly folosește Next.js App Router, React, TypeScript strict, Tailwind CSS,
 primitive shadcn/ui și PostgreSQL/Supabase. Sunt implementate fundația, shell-ul,
-schema și politicile de acces, autentificarea și profilul. Rețetele/matchingul și
+schema și politicile de acces, autentificarea, profilul și catalogul de ingrediente. Rețetele/matchingul și
 celelalte module de business rămân la etapele lor separate.
 
 **Verificare:** rezultatele curente și limitele de execuție sunt în
+[raportul catalogului](docs/ingredients/VERIFICATION.md) și
 [AUTH-VERIFICATION.md](docs/database/AUTH-VERIFICATION.md). Migrațiile și integrarea
 cu serviciile Supabase nu sunt încă validate live în acest mediu.
 
@@ -21,7 +22,7 @@ npm ci
 
 Planul inițial prevede pnpm, care nu este disponibil acum în PATH. Reconcilierea managerului/lockfile-ului nu este făcută în etapa de routing. Scripturile individuale pot fi rulate prin `npm run <script>` pe instalarea curentă; comenzile pnpm din tabel rămân disponibile când CLI-ul este configurat. Scriptul agregat `check` folosește încă pnpm intern; în mediul actual rulează verificările individual.
 
-Copiază `.env.example` în `.env.local` la rădăcină. Shell-ul și catalogul public pornesc fără credențiale; autentificarea cere Supabase și CSRF_SECRET. Nu completa niciodată secrete în fișierul versionat `.env.example`.
+Copiază `.env.example` în `.env.local` la rădăcină. Shell-ul pornește fără credențiale; datele catalogului cer Supabase, iar autentificarea cere și CSRF_SECRET. Nu completa niciodată secrete în fișierul versionat `.env.example`.
 
 ```sh
 npm run dev
@@ -88,7 +89,7 @@ Regula ESLint locală verifică importuri/reexporturi statice și importuri dina
 
 ## Shell și routing
 
-Rutele sunt `/`, `/recipes`, `/recipes/[recipeId]`, `/my-fridge`, `/meal-planner`, `/shopping-list`, `/favorites`, `/assistant`, `/profile`, `/login` și `/admin`. `/recipes/demo` este un placeholder de detaliu, nu o rețetă încărcată. `/ui-kit` își păstrează layoutul separat.
+Rutele sunt `/`, `/recipes`, `/recipes/[recipeId]`, `/ingredients`, `/my-fridge`, `/meal-planner`, `/shopping-list`, `/favorites`, `/assistant`, `/profile`, `/login` și `/admin`. `/recipes/demo` este un placeholder de detaliu, nu o rețetă încărcată. `/ui-kit` își păstrează layoutul separat.
 
 Route group-ul `(shell)` oferă header, sidebar desktop, drawer mobil, footer, breadcrumbs și loading/error/404. Paginile sunt Server Components; insulele client gestionează pathname, focusul și tema. Login și profilul sunt funcționale după configurarea Supabase; profilul și celelalte rute private sunt protejate server-side, iar admin cere rol și MFA.
 
@@ -188,3 +189,20 @@ npm run test:e2e
 `test:prerender` verifică acum manifestul și absența HTML-ului privat static:
 headerul cu sesiune face rutele dinamice. `test:access-routes` invocă handlerii
 compilați în proces cu un provider HTTP de test; nu reprezintă integrare HTTP live.
+
+## Catalog de ingrediente — etapa 4
+
+Catalog public `/ingredients`: 32 identități editoriale, aliasuri RO/RU/EN,
+căutare fără diacritice, prefixe și sinonime explicite, autocomplete și paginare
+keyset. Ingredientele generale și specifice au UUID-uri distincte. Nu se presupun
+substituții sau conversii între bucăți, masă și volum. Seed-ul nu include cifre
+nutriționale neverificate; API-ul poate publica date verificate cu proveniență.
+
+- [API, model, configurare și verificare manuală](docs/ingredients/CATALOG.md)
+- [Rezultate reale și limitări](docs/ingredients/VERIFICATION.md)
+- [Fișiere create/modificate](docs/ingredients/FILES.md)
+
+Aplică migrațiile noi 09–11 după cele existente. Nu sunt aplicate automat de build.
+`npm test` include testele catalogului; `npm run test:ingredient-routes` verifică
+handlerii compilați după build. Testele SQL cer PGlite, iar cele Playwright cer
+Chromium și permisiunea de a porni serverul local; vezi raportul acestei etape.

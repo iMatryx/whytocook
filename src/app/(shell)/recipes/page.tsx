@@ -10,6 +10,9 @@ export const metadata: Metadata = { title: shellPages.recipes.title };
 export default function RecipesPage() {
   return (
     <PagePlaceholder content={shellPages.recipes}>
+      <Button asChild variant="outline">
+        <Link href="/ingredients">Catalog de ingrediente</Link>
+      </Button>
       <Button asChild>
         <Link href="/my-fridge">Deschide frigiderul</Link>
       </Button>
