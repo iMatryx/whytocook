@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "slug": "bauturi",
+      "name": "Băuturi și lichide de bază"
+    },
+    {
+      "slug": "nuci-si-seminte",
+      "name": "Nuci și semințe"
+    }
+  ],
+  "ingredients": [
+    {
+      "slug": "malai-de-porumb",
+      "name": "Mălai de porumb",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "cereale-si-fainuri",
+      "aliases": {
+        "ro-RO": ["Mălai de porumb"],
+        "ru-RU": ["Кукурузная крупа"],
+        "en-GB": ["Cornmeal"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "fulgi-de-ovaz",
+      "name": "Fulgi de ovăz",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "cereale-si-fainuri",
+      "aliases": {
+        "ro-RO": ["Fulgi de ovăz"],
+        "ru-RU": ["Овсяные хлопья"],
+        "en-GB": ["Rolled oats"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "gris-de-grau",
+      "name": "Griș de grâu",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "cereale-si-fainuri",
+      "aliases": {
+        "ro-RO": ["Griș de grâu"],
+        "ru-RU": ["Манная крупа"],
+        "en-GB": ["Wheat semolina"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "arpacas-de-orz",
+      "name": "Arpacaș de orz",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "cereale-si-fainuri",
+      "aliases": {
+        "ro-RO": ["Arpacaș de orz"],
+        "ru-RU": ["Перловая крупа"],
+        "en-GB": ["Pearl barley"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "hrisca",
+      "name": "Hrișcă",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "cereale-si-fainuri",
+      "aliases": {
+        "ro-RO": ["Hrișcă"],
+        "ru-RU": ["Гречневая крупа"],
+        "en-GB": ["Buckwheat groats"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "paste-din-grau-fara-ou",
+      "name": "Paste din grâu fără ou",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "cereale-si-fainuri",
+      "aliases": {
+        "ro-RO": ["Paste din grâu fără ou"],
+        "ru-RU": ["Макароны из пшеницы без яиц"],
+        "en-GB": ["Egg-free wheat pasta"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "paine-de-grau",
+      "name": "Pâine de grâu",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "cereale-si-fainuri",
+      "aliases": {
+        "ro-RO": ["Pâine de grâu"],
+        "ru-RU": ["Пшеничный хлеб"],
+        "en-GB": ["Wheat bread"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "branza-proaspata-de-vaca",
+      "name": "Brânză proaspătă de vacă",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "lactate",
+      "aliases": {
+        "ro-RO": ["Brânză proaspătă de vacă"],
+        "ru-RU": ["Свежий творог из коровьего молока"],
+        "en-GB": ["Fresh cow milk curd cheese"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "smantana",
+      "name": "Smântână",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "lactate",
+      "aliases": {
+        "ro-RO": ["Smântână"],
+        "ru-RU": ["Сметана"],
+        "en-GB": ["Sour cream"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "varza-alba",
+      "name": "Varză albă",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "legume",
+      "aliases": {
+        "ro-RO": ["Varză albă"],
+        "ru-RU": ["Белокочанная капуста"],
+        "en-GB": ["White cabbage"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "sfecla-rosie",
+      "name": "Sfeclă roșie",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "legume",
+      "aliases": {
+        "ro-RO": ["Sfeclă roșie"],
+        "ru-RU": ["Свёкла"],
+        "en-GB": ["Beetroot"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "mazare-verde",
+      "name": "Mazăre verde",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "legume",
+      "aliases": {
+        "ro-RO": ["Mazăre verde"],
+        "ru-RU": ["Зелёный горошек"],
+        "en-GB": ["Green peas"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "ciuperci-champignon",
+      "name": "Ciuperci champignon",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "legume",
+      "aliases": {
+        "ro-RO": ["Ciuperci champignon"],
+        "ru-RU": ["Шампиньоны"],
+        "en-GB": ["Button mushrooms"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "marar",
+      "name": "Mărar",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "legume",
+      "aliases": {
+        "ro-RO": ["Mărar"],
+        "ru-RU": ["Укроп"],
+        "en-GB": ["Dill"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "patrunjel-frunze",
+      "name": "Frunze de pătrunjel",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "legume",
+      "aliases": {
+        "ro-RO": ["Frunze de pătrunjel"],
+        "ru-RU": ["Листья петрушки"],
+        "en-GB": ["Parsley leaves"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "fasole-alba-fiarta-scursa",
+      "name": "Fasole albă fiartă și scursă",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "leguminoase",
+      "aliases": {
+        "ro-RO": ["Fasole albă fiartă și scursă"],
+        "ru-RU": ["Варёная белая фасоль без отвара"],
+        "en-GB": ["Cooked drained white beans"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "naut-fiert-scurs",
+      "name": "Năut fiert și scurs",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "leguminoase",
+      "aliases": {
+        "ro-RO": ["Năut fiert și scurs"],
+        "ru-RU": ["Варёный нут без отвара"],
+        "en-GB": ["Cooked drained chickpeas"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "apa-potabila",
+      "name": "Apă potabilă",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "bauturi",
+      "aliases": {
+        "ro-RO": ["Apă potabilă"],
+        "ru-RU": ["Питьевая вода"],
+        "en-GB": ["Drinking water"]
+      },
+      "units": ["ml", "l"],
+      "defaultUnit": "ml"
+    },
+    {
+      "slug": "otet-de-mere",
+      "name": "Oțet de mere",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "condimente-si-zahar",
+      "aliases": {
+        "ro-RO": ["Oțet de mere"],
+        "ru-RU": ["Яблочный уксус"],
+        "en-GB": ["Apple cider vinegar"]
+      },
+      "units": ["ml", "l"],
+      "defaultUnit": "ml"
+    },
+    {
+      "slug": "stafide",
+      "name": "Stafide",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "fructe",
+      "aliases": {
+        "ro-RO": ["Stafide"],
+        "ru-RU": ["Изюм"],
+        "en-GB": ["Raisins"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "miez-de-nuca",
+      "name": "Miez de nucă",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "nuci-si-seminte",
+      "aliases": {
+        "ro-RO": ["Miez de nucă"],
+        "ru-RU": ["Ядра грецких орехов"],
+        "en-GB": ["Walnut kernels"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "scortisoara-macinata",
+      "name": "Scorțișoară măcinată",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "condimente-si-zahar",
+      "aliases": {
+        "ro-RO": ["Scorțișoară măcinată"],
+        "ru-RU": ["Молотая корица"],
+        "en-GB": ["Ground cinnamon"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "piper-negru-macinat",
+      "name": "Piper negru măcinat",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "condimente-si-zahar",
+      "aliases": {
+        "ro-RO": ["Piper negru măcinat"],
+        "ru-RU": ["Молотый чёрный перец"],
+        "en-GB": ["Ground black pepper"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    },
+    {
+      "slug": "bicarbonat-de-sodiu-alimentar",
+      "name": "Bicarbonat de sodiu alimentar",
+      "kind": "specific",
+      "parent": null,
+      "relation": null,
+      "category": "condimente-si-zahar",
+      "aliases": {
+        "ro-RO": ["Bicarbonat de sodiu alimentar"],
+        "ru-RU": ["Пищевая сода"],
+        "en-GB": ["Food-grade baking soda"]
+      },
+      "units": ["g", "kg"],
+      "defaultUnit": "g"
+    }
+  ],
+  "equipment": [
+    {
+      "code": "knife",
+      "name": "Cuțit"
+    },
+    {
+      "code": "mixing_bowl",
+      "name": "Bol"
+    },
+    {
+      "code": "baking_tray",
+      "name": "Tavă de copt"
+    },
+    {
+      "code": "rolling_pin",
+      "name": "Sucitor"
+    },
+    {
+      "code": "strainer",
+      "name": "Strecurătoare"
+    },
+    {
+      "code": "grater",
+      "name": "Răzătoare"
+    },
+    {
+      "code": "food_thermometer",
+      "name": "Termometru alimentar"
+    }
+  ],
+  "tags": [
+    {
+      "slug": "economic",
+      "name": "Economic — intenție editorială",
+      "kind": "general"
+    },
+    {
+      "slug": "moldova",
+      "name": "Moldova",
+      "kind": "cuisine"
+    },
+    {
+      "slug": "romania",
+      "name": "România",
+      "kind": "cuisine"
+    },
+    {
+      "slug": "breakfast",
+      "name": "Mic dejun",
+      "kind": "general"
+    },
+    {
+      "slug": "lunch",
+      "name": "Prânz",
+      "kind": "general"
+    },
+    {
+      "slug": "dinner",
+      "name": "Cină",
+      "kind": "general"
+    },
+    {
+      "slug": "dessert",
+      "name": "Desert",
+      "kind": "general"
+    },
+    {
+      "slug": "high-protein-candidate",
+      "name": "Candidat high-protein — neverificat",
+      "kind": "general"
+    },
+    {
+      "slug": "high-protein",
+      "name": "High-protein — verificat",
+      "kind": "general"
+    }
+  ]
+}

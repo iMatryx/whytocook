@@ -1,5 +1,10 @@
 # Catalog de ingrediente — verificare
 
+Actualizare la verificarea frigiderului virtual: PGlite 0.5.14 este instalat, iar
+suita SQL a catalogului a trecut. Rezultatele curente ale checkoutului sunt în
+[raportul My Fridge](../pantry/VERIFICATION.md); blocajul PGlite din raportul inițial
+de mai jos este istoric. Integrarea Supabase live rămâne neverificată.
+
 Verificat la 2 noiembrie 2026, Node.js 24.14.0, instalarea npm existentă.
 Nu au fost aplicate migrații pe un proiect Supabase local sau hosted.
 

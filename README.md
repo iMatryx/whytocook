@@ -1,12 +1,29 @@
 # Cookly
 
+Motorul determinist de potrivire este disponibil ca serviciu TypeScript, cu
+cantități exacte, scor explicabil și alergii ca excluderi. Contractele, integrarea
+și limitele sunt în [ghidul matching](docs/matching/MATCHING.md), iar rezultatele
+executate în [verificări](docs/matching/VERIFICATION.md).
+
+```sh
+npm run test:matching
+npm run matching:demo
+npm run matching:benchmark
+```
+
 Cookly folosește Next.js App Router, React, TypeScript strict, Tailwind CSS,
 primitive shadcn/ui și PostgreSQL/Supabase. Sunt implementate fundația, shell-ul,
-schema și politicile de acces, autentificarea, profilul și catalogul de ingrediente. Rețetele/matchingul și
-celelalte module de business rămân la etapele lor separate.
+schema și politicile de acces, autentificarea, profilul, catalogul de ingrediente și frigiderul virtual.
+Colecția inițială de rețete, instrumentele de seed și motorul de matching sunt disponibile.
+Pagina `/recipes` oferă căutare, filtre avansate, URL partajabil și compatibilitate
+cu inventarul. Catalogul publicat și colecția demo explicită rămân separate.
+Ghid: [căutare și filtre](docs/recipes/SEARCH.md),
+[verificări](docs/recipes/SEARCH-VERIFICATION.md),
+[fișiere](docs/recipes/SEARCH-FILES.md).
 
 **Verificare:** rezultatele curente și limitele de execuție sunt în
-[raportul catalogului](docs/ingredients/VERIFICATION.md) și
+[raportul seed-ului de rețete](docs/recipes/VERIFICATION.md),
+[raportul frigiderului](docs/pantry/VERIFICATION.md), [raportul catalogului](docs/ingredients/VERIFICATION.md) și
 [AUTH-VERIFICATION.md](docs/database/AUTH-VERIFICATION.md). Migrațiile și integrarea
 cu serviciile Supabase nu sunt încă validate live în acest mediu.
 
@@ -141,7 +158,7 @@ Nu începe o altă etapă fără cerere separată.
 
 ## Schema bazei de date — etapa 3
 
-Schema este în `supabase/migrations/`: 37 de tabele private, rețete versionate,
+Schema este în `supabase/migrations/`: tabele private, rețete versionate,
 unități/porții/substituții, date personale cu FK compuse pe proprietar și acces
 controlat prin RLS, RPC-uri restrânse și integrarea Auth/profil descrisă mai jos.
 
@@ -206,3 +223,48 @@ Aplică migrațiile noi 09–11 după cele existente. Nu sunt aplicate automat d
 `npm test` include testele catalogului; `npm run test:ingredient-routes` verifică
 handlerii compilați după build. Testele SQL cer PGlite, iar cele Playwright cer
 Chromium și permisiunea de a porni serverul local; vezi raportul acestei etape.
+
+## Frigider virtual — etapa 4
+
+`/my-fridge` este public: inventar local pentru invitați și inventar propriu în
+PostgreSQL pentru conturi verificate. Include loturi separate, CRUD, autocomplete,
+categorii, filtre/sortare, expirare și conversii exacte g/kg, ml/l. Cantitatea
+necunoscută este distinctă de zero. „Am gătit” arată un preview și scade cantitățile
+numai la confirmare, atomic și fără dublare la retry. Inventarele guest și cont
+rămân separate; nu există import automat sau coadă offline pentru cont.
+
+- [Comportament, API, securitate și configurare](docs/pantry/MY-FRIDGE.md)
+- [Rezultate reale și limitări](docs/pantry/VERIFICATION.md)
+- [Fișiere create/modificate](docs/pantry/FILES.md)
+
+Migrația 12 se aplică după cele existente. `npm test` include testele pantry;
+`npm run test:pantry-routes` invocă handlerii după build. PGlite 0.5.14 este folosit
+numai de testele SQL izolate și este acum instalat în devDependencies. Nu s-au
+adăugat dependențe runtime pentru acest modul.
+
+## Bază inițială de rețete — etapa 4
+
+72 rețete originale demonstrative, în grupele mic dejun/prânz/cină/desert, cu
+63 clasificări vegetariene și 22 candidate high-protein. Rețetele verificate sunt
+separate într-un fișier inițial gol. Nutriția și prețurile necunoscute rămân null,
+cu raport explicit; seed-ul rămâne draft și nu publică rețete demonstrative.
+
+JSON cu validare Zod, referințe canonice, import→SQL atomic/idempotent, export
+inclusiv din DB prin funcție de mentenanță, verificare de drift și raport cu
+zero erori/310 avertizări. Migrațiile 13–15 extind schema existentă fără a modifica
+01–12. Sunt 24 ingrediente noi explicite, fără substituții sau conversii inventate.
+
+- [Contract, schemă, surse, import/export și pași manuali](docs/recipes/INITIAL-COLLECTION.md)
+- [Raport de completitudine](docs/recipes/COMPLETENESS.json)
+- [Verificările executate](docs/recipes/VERIFICATION.md)
+- [Fișierele acestei sarcini](docs/recipes/FILES.md)
+
+```sh
+npm run recipes:check
+npm run recipes:validate -- --input data/recipes/demonstration.v1.json
+npm run test:recipes
+npm run test:db
+```
+
+Instrumentele CLI nu aplică SQL și nu accesează secrete sau servicii externe.
+Nu există UI nou sau integrare matching în această sarcină.

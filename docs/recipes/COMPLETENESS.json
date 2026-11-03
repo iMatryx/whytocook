@@ -1,0 +1,2193 @@
+{
+  "schemaVersion": 1,
+  "valid": true,
+  "summary": {
+    "total": 72,
+    "demonstration": 72,
+    "verified": 0,
+    "mealTypes": {
+      "breakfast": 12,
+      "lunch": 20,
+      "dinner": 24,
+      "dessert": 16
+    },
+    "collections": {
+      "vegetarian": 63,
+      "high-protein": 22
+    },
+    "errors": 0,
+    "warnings": 310
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "terci-de-ovaz-cu-mere",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "terci-de-ovaz-cu-mere",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "terci-de-ovaz-cu-mere",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "terci-de-ovaz-cu-mere",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "terci-de-ovaz-cu-banana",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "terci-de-ovaz-cu-banana",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "terci-de-ovaz-cu-banana",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "terci-de-ovaz-cu-banana",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "mamaliga-moale-cu-lapte",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "mamaliga-moale-cu-lapte",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "mamaliga-moale-cu-lapte",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "mamaliga-moale-cu-lapte",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "omleta-cu-verdeata",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "omleta-cu-verdeata",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "omleta-cu-verdeata",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "omleta-cu-verdeata",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "omleta-cu-verdeata",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "oua-in-sos-de-rosii",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "oua-in-sos-de-rosii",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "oua-in-sos-de-rosii",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "oua-in-sos-de-rosii",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "oua-in-sos-de-rosii",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "paine-prajita-cu-branza-si-rosii",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "paine-prajita-cu-branza-si-rosii",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "paine-prajita-cu-branza-si-rosii",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "paine-prajita-cu-branza-si-rosii",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "paine-prajita-cu-branza-si-rosii",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "clatite-sarate-cu-branza",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "clatite-sarate-cu-branza",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "clatite-sarate-cu-branza",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "clatite-sarate-cu-branza",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "clatite-sarate-cu-branza",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "omleta-cu-cartofi-fierti",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "omleta-cu-cartofi-fierti",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "omleta-cu-cartofi-fierti",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "omleta-cu-cartofi-fierti",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "branza-cu-iaurt-si-mar",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "branza-cu-iaurt-si-mar",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "branza-cu-iaurt-si-mar",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "branza-cu-iaurt-si-mar",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "branza-cu-iaurt-si-mar",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "budinca-sarata-de-ovaz-si-spanac",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "budinca-sarata-de-ovaz-si-spanac",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "budinca-sarata-de-ovaz-si-spanac",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "budinca-sarata-de-ovaz-si-spanac",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "budinca-sarata-de-ovaz-si-spanac",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "friganele-cu-iaurt",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "friganele-cu-iaurt",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "friganele-cu-iaurt",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "friganele-cu-iaurt",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "salata-de-oua-si-castraveti",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "salata-de-oua-si-castraveti",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "salata-de-oua-si-castraveti",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "salata-de-oua-si-castraveti",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "salata-de-oua-si-castraveti",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "zeama-simpla-de-pui-cu-orez",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "zeama-simpla-de-pui-cu-orez",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "zeama-simpla-de-pui-cu-orez",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "zeama-simpla-de-pui-cu-orez",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "zeama-simpla-de-pui-cu-orez",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "supa-de-legume-cu-orez",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "supa-de-legume-cu-orez",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "supa-de-legume-cu-orez",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "supa-de-legume-cu-orez",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "ciorba-de-linte-si-rosii",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "ciorba-de-linte-si-rosii",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "ciorba-de-linte-si-rosii",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "ciorba-de-linte-si-rosii",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "ciorba-de-varza-cu-cartofi",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "ciorba-de-varza-cu-cartofi",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "ciorba-de-varza-cu-cartofi",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "ciorba-de-varza-cu-cartofi",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "ciorba-de-sfecla-cu-fasole-alba",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "ciorba-de-sfecla-cu-fasole-alba",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "ciorba-de-sfecla-cu-fasole-alba",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "ciorba-de-sfecla-cu-fasole-alba",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "supa-crema-de-mazare",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "supa-crema-de-mazare",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "supa-crema-de-mazare",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "supa-crema-de-mazare",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "supa-crema-de-cartof-si-morcov",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "supa-crema-de-cartof-si-morcov",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "supa-crema-de-cartof-si-morcov",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "supa-crema-de-cartof-si-morcov",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "supa-rapida-de-fasole-alba",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "supa-rapida-de-fasole-alba",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "supa-rapida-de-fasole-alba",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "supa-rapida-de-fasole-alba",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "pilaf-cu-pui-si-morcov",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "pilaf-cu-pui-si-morcov",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "pilaf-cu-pui-si-morcov",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "pilaf-cu-pui-si-morcov",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "pilaf-cu-pui-si-morcov",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "pilaf-de-orez-cu-ciuperci",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "pilaf-de-orez-cu-ciuperci",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "pilaf-de-orez-cu-ciuperci",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "pilaf-de-orez-cu-ciuperci",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "hrisca-cu-ciuperci-si-ceapa",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "hrisca-cu-ciuperci-si-ceapa",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "hrisca-cu-ciuperci-si-ceapa",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "hrisca-cu-ciuperci-si-ceapa",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "mancare-de-linte-cu-rosii",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "mancare-de-linte-cu-rosii",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "mancare-de-linte-cu-rosii",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "mancare-de-linte-cu-rosii",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "fasole-batuta-cu-ceapa",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "fasole-batuta-cu-ceapa",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "fasole-batuta-cu-ceapa",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "fasole-batuta-cu-ceapa",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "ardei-umpluti-cu-orez-si-linte",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "ardei-umpluti-cu-orez-si-linte",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "ardei-umpluti-cu-orez-si-linte",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "ardei-umpluti-cu-orez-si-linte",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "ghiveci-de-legume-la-oala",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "ghiveci-de-legume-la-oala",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "ghiveci-de-legume-la-oala",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "ghiveci-de-legume-la-oala",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "paste-cu-sos-simplu-de-rosii",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "paste-cu-sos-simplu-de-rosii",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "paste-cu-sos-simplu-de-rosii",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "paste-cu-sos-simplu-de-rosii",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "paste-cu-branza-proaspata",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "paste-cu-branza-proaspata",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "paste-cu-branza-proaspata",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "paste-cu-branza-proaspata",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "cartofi-taranesti-cu-ciuperci",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "cartofi-taranesti-cu-ciuperci",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "cartofi-taranesti-cu-ciuperci",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "cartofi-taranesti-cu-ciuperci",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "salata-de-sfecla-si-fasole",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "salata-de-sfecla-si-fasole",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "salata-de-sfecla-si-fasole",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "salata-de-sfecla-si-fasole",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "chiftelute-de-pui-cu-ovaz-la-cuptor",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "chiftelute-de-pui-cu-ovaz-la-cuptor",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "chiftelute-de-pui-cu-ovaz-la-cuptor",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "chiftelute-de-pui-cu-ovaz-la-cuptor",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "chiftelute-de-pui-cu-ovaz-la-cuptor",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "tocana-de-pui-cu-cartofi",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "tocana-de-pui-cu-cartofi",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "tocana-de-pui-cu-cartofi",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "tocana-de-pui-cu-cartofi",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "tocana-de-pui-cu-cartofi",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "pui-cu-iaurt-la-tigaie",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "pui-cu-iaurt-la-tigaie",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "pui-cu-iaurt-la-tigaie",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "pui-cu-iaurt-la-tigaie",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "pui-cu-iaurt-la-tigaie",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "pui-cu-varza-la-cuptor",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "pui-cu-varza-la-cuptor",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "pui-cu-varza-la-cuptor",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "pui-cu-varza-la-cuptor",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "pui-cu-varza-la-cuptor",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "pui-cu-morcovi-si-orez",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "pui-cu-morcovi-si-orez",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "pui-cu-morcovi-si-orez",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "pui-cu-morcovi-si-orez",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "pui-cu-morcovi-si-orez",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "pui-cu-ciuperci-in-sos-de-iaurt",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "pui-cu-ciuperci-in-sos-de-iaurt",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "pui-cu-ciuperci-in-sos-de-iaurt",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "pui-cu-ciuperci-in-sos-de-iaurt",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "pui-cu-ciuperci-in-sos-de-iaurt",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "pui-cu-legume-de-sezon-la-tava",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "pui-cu-legume-de-sezon-la-tava",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "pui-cu-legume-de-sezon-la-tava",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "pui-cu-legume-de-sezon-la-tava",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "pui-cu-legume-de-sezon-la-tava",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "omleta-cu-ciuperci",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "omleta-cu-ciuperci",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "omleta-cu-ciuperci",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "omleta-cu-ciuperci",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "omleta-cu-ciuperci",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "frittata-cu-broccoli",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "frittata-cu-broccoli",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "frittata-cu-broccoli",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "frittata-cu-broccoli",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "frittata-cu-broccoli",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "omleta-cu-branza-si-ceapa",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "omleta-cu-branza-si-ceapa",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "omleta-cu-branza-si-ceapa",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "omleta-cu-branza-si-ceapa",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "omleta-cu-branza-si-ceapa",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "salata-de-naut-si-varza",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "salata-de-naut-si-varza",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "salata-de-naut-si-varza",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "salata-de-naut-si-varza",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "salata-de-fasole-si-rosii",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "salata-de-fasole-si-rosii",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "salata-de-fasole-si-rosii",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "salata-de-fasole-si-rosii",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "salata-de-cartofi-cu-ou",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "salata-de-cartofi-cu-ou",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "salata-de-cartofi-cu-ou",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "salata-de-cartofi-cu-ou",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "salata-de-linte-cu-morcov",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "salata-de-linte-cu-morcov",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "salata-de-linte-cu-morcov",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "salata-de-linte-cu-morcov",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "naut-in-sos-de-rosii",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "naut-in-sos-de-rosii",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "naut-in-sos-de-rosii",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "naut-in-sos-de-rosii",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "dovlecei-umpluti-cu-branza",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "dovlecei-umpluti-cu-branza",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "dovlecei-umpluti-cu-branza",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "dovlecei-umpluti-cu-branza",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "dovlecei-umpluti-cu-branza",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "vinete-coapte-cu-rosii-si-iaurt",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "vinete-coapte-cu-rosii-si-iaurt",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "vinete-coapte-cu-rosii-si-iaurt",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "vinete-coapte-cu-rosii-si-iaurt",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "varza-calita-cu-ou",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "varza-calita-cu-ou",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "varza-calita-cu-ou",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "varza-calita-cu-ou",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "spanac-cu-ou-si-iaurt",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "spanac-cu-ou-si-iaurt",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "spanac-cu-ou-si-iaurt",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "spanac-cu-ou-si-iaurt",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "spanac-cu-ou-si-iaurt",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "mamaliga-cu-ciuperci",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "mamaliga-cu-ciuperci",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "mamaliga-cu-ciuperci",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "mamaliga-cu-ciuperci",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "mamaliga-cu-branza-si-smantana",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "mamaliga-cu-branza-si-smantana",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "mamaliga-cu-branza-si-smantana",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "mamaliga-cu-branza-si-smantana",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "coltunasi-cu-branza",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "coltunasi-cu-branza",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "coltunasi-cu-branza",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "coltunasi-cu-branza",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "placinte-cu-varza-la-tigaie",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "placinte-cu-varza-la-tigaie",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "placinte-cu-varza-la-tigaie",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "placinte-cu-varza-la-tigaie",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "budinca-sarata-de-paste-cu-branza",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "budinca-sarata-de-paste-cu-branza",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "budinca-sarata-de-paste-cu-branza",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "budinca-sarata-de-paste-cu-branza",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "HIGH_PROTEIN_UNVERIFIED",
+      "recipeKey": "budinca-sarata-de-paste-cu-branza",
+      "path": "proteinClaim",
+      "message": "Candidat editorial, nu afirmație nutrițională verificată."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "orez-cu-mazare-si-ou",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "orez-cu-mazare-si-ou",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "orez-cu-mazare-si-ou",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "orez-cu-mazare-si-ou",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "clatite-cu-mere-la-tigaie",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "clatite-cu-mere-la-tigaie",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "clatite-cu-mere-la-tigaie",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "clatite-cu-mere-la-tigaie",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "clatite-cu-branza-dulce",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "clatite-cu-branza-dulce",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "clatite-cu-branza-dulce",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "clatite-cu-branza-dulce",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "oladii-cu-iaurt",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "oladii-cu-iaurt",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "oladii-cu-iaurt",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "oladii-cu-iaurt",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "papanasi-copti-cu-iaurt",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "papanasi-copti-cu-iaurt",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "papanasi-copti-cu-iaurt",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "papanasi-copti-cu-iaurt",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "alivenci-dulci-cu-branza",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "alivenci-dulci-cu-branza",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "alivenci-dulci-cu-branza",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "alivenci-dulci-cu-branza",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "gris-cu-lapte-si-scortisoara",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "gris-cu-lapte-si-scortisoara",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "gris-cu-lapte-si-scortisoara",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "gris-cu-lapte-si-scortisoara",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "orez-cu-lapte",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "orez-cu-lapte",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "orez-cu-lapte",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "orez-cu-lapte",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "budinca-de-paine-cu-mere",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "budinca-de-paine-cu-mere",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "budinca-de-paine-cu-mere",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "budinca-de-paine-cu-mere",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "tarta-simpla-cu-mere",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "tarta-simpla-cu-mere",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "tarta-simpla-cu-mere",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "tarta-simpla-cu-mere",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "placinta-cu-mere-la-cuptor",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "placinta-cu-mere-la-cuptor",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "placinta-cu-mere-la-cuptor",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "placinta-cu-mere-la-cuptor",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "mere-coapte-cu-nuca",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "mere-coapte-cu-nuca",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "mere-coapte-cu-nuca",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "mere-coapte-cu-nuca",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "compot-de-mere",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "compot-de-mere",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "compot-de-mere",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "compot-de-mere",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "salata-de-fructe-cu-iaurt",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "salata-de-fructe-cu-iaurt",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "salata-de-fructe-cu-iaurt",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "salata-de-fructe-cu-iaurt",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "fursecuri-de-ovaz-si-banana",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "fursecuri-de-ovaz-si-banana",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "fursecuri-de-ovaz-si-banana",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "fursecuri-de-ovaz-si-banana",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "budinca-de-branza-cu-stafide",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "budinca-de-branza-cu-stafide",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "budinca-de-branza-cu-stafide",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "budinca-de-branza-cu-stafide",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    },
+    {
+      "severity": "warning",
+      "code": "NUTRITION_UNAVAILABLE",
+      "recipeKey": "arpacas-dulce-cu-nuca",
+      "path": "nutrition",
+      "message": "Sursa și valorile nutritive nu sunt verificate; nu se interpretează ca zero."
+    },
+    {
+      "severity": "warning",
+      "code": "ALLERGENS_UNVERIFIED",
+      "recipeKey": "arpacas-dulce-cu-nuca",
+      "path": "allergens",
+      "message": "Lista editorială de alergeni necesită verificare, inclusiv etichetele produselor."
+    },
+    {
+      "severity": "warning",
+      "code": "CULINARY_REVIEW_REQUIRED",
+      "recipeKey": "arpacas-dulce-cu-nuca",
+      "path": "verification",
+      "message": "Timpii, porțiile și pașii necesită gătire de probă."
+    },
+    {
+      "severity": "warning",
+      "code": "BUDGET_UNVERIFIED",
+      "recipeKey": "arpacas-dulce-cu-nuca",
+      "path": "budget",
+      "message": "Caracterul economic nu are încă prețuri regionale documentate."
+    }
+  ]
+}

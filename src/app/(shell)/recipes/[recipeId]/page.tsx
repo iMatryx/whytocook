@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 
-import { PagePlaceholder } from "@/components/layout/page-placeholder.server";
-import { Button } from "@/components/ui/button";
+import { RecipeDetailClient } from "@/components/recipes/recipe-detail.client";
+import { Skeleton } from "@/components/ui/skeleton";
 import { shellPages } from "@/config/shell-pages";
 import { RecipeRouteIdSchema } from "@/shared/contracts/recipe-route.schema";
 
@@ -15,12 +15,15 @@ export default async function RecipeDetailsPage({
   params: Promise<{ recipeId: string }>;
 }) {
   const { recipeId } = await params;
-  if (!RecipeRouteIdSchema.safeParse(recipeId).success) notFound();
+  if (
+    !RecipeRouteIdSchema.safeParse(recipeId).success ||
+    recipeId.length > 100 ||
+    !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(recipeId)
+  )
+    notFound();
   return (
-    <PagePlaceholder content={shellPages.recipeDetails}>
-      <Button asChild variant="outline">
-        <Link href="/recipes">Înapoi la rețete</Link>
-      </Button>
-    </PagePlaceholder>
+    <Suspense fallback={<Skeleton className="h-96 rounded-2xl" aria-label="Se încarcă rețeta" />}>
+      <RecipeDetailClient slug={recipeId} />
+    </Suspense>
   );
 }

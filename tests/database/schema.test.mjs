@@ -48,7 +48,9 @@ test("Cookly PostgreSQL schema", async (suite) => {
   async function rejects(sql, code, args = []) {
     await db.exec("SAVEPOINT expected_failure");
     try {
-      await assert.rejects(db.query(sql, args), (error) => error.code === code);
+      await assert.rejects(db.query(sql, args), (error) =>
+        Array.isArray(code) ? code.includes(error.code) : error.code === code,
+      );
     } finally {
       await db.exec("ROLLBACK TO SAVEPOINT expected_failure; RELEASE SAVEPOINT expected_failure");
     }
@@ -344,8 +346,13 @@ test("Cookly PostgreSQL schema", async (suite) => {
   await scenario(
     "catalog deletes restrict referenced data; optional category is nullable",
     async () => {
-      await rejects("DELETE FROM app_private.ingredients WHERE id=$1", "23503", [ingredient]);
-      await rejects("DELETE FROM app_private.units WHERE code='g'", "23503");
+      // PostgreSQL engines report either FK violation or the narrower RESTRICT violation.
+      await rejects(
+        "DELETE FROM app_private.ingredients WHERE id=$1",
+        ["23503", "23001"],
+        [ingredient],
+      );
+      await rejects("DELETE FROM app_private.units WHERE code='g'", ["23503", "23001"]);
       await db.exec("DELETE FROM app_private.ingredient_categories");
       assert.equal(
         await scalar("SELECT category_id FROM app_private.ingredients WHERE id=$1", [ingredient]),

@@ -1,24 +1,17 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-
-import { PagePlaceholder } from "@/components/layout/page-placeholder.server";
-import { Button } from "@/components/ui/button";
+import { Suspense } from "react";
+import { RecipeSearchClient } from "@/components/recipes/recipe-search.client";
+import { Skeleton } from "@/components/ui/skeleton";
 import { shellPages } from "@/config/shell-pages";
 
 export const metadata: Metadata = { title: shellPages.recipes.title };
 
 export default function RecipesPage() {
   return (
-    <PagePlaceholder content={shellPages.recipes}>
-      <Button asChild variant="outline">
-        <Link href="/ingredients">Catalog de ingrediente</Link>
-      </Button>
-      <Button asChild>
-        <Link href="/my-fridge">Deschide frigiderul</Link>
-      </Button>
-      <Button asChild variant="outline">
-        <Link href="/recipes/demo">Vezi structura unei rețete</Link>
-      </Button>
-    </PagePlaceholder>
+    <Suspense
+      fallback={<Skeleton className="h-96 rounded-2xl" aria-label="Se încarcă pagina de rețete" />}
+    >
+      <RecipeSearchClient />
+    </Suspense>
   );
 }

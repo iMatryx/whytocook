@@ -2,21 +2,26 @@
 
 Etapa 2 · 1 noiembrie 2026 · Fără funcționalități de business.
 
+Document istoric al shell-ului. Actualizare etapa 4: `/my-fridge` este acum public,
+cu inventar guest local și inventar privat pentru cont; detalii în
+[My Fridge](../pantry/MY-FRIDGE.md). Celelalte fluxuri Auth/catalog sunt documentate
+în rapoartele etapelor respective, nu în stările placeholder de mai jos.
+
 ## Rute și comportament
 
-| URL                   | Pagina               | Stare actuală                                                               |
-| --------------------- | -------------------- | --------------------------------------------------------------------------- |
-| `/`                   | Acasă                | Textul fundației păstrat, legături spre rețete/frigider/plan                |
-| `/recipes`            | Rețete               | Catalog în pregătire; link spre `/recipes/demo`                             |
-| `/recipes/[recipeId]` | Detalii rețetă       | Placeholder pentru ID valid sintactic; fără încărcarea unei rețete          |
-| `/my-fridge`          | Frigiderul meu       | Inventar în pregătire, fără afirmația că inventarul utilizatorului este gol |
-| `/meal-planner`       | Planificator de mese | Planificare în pregătire                                                    |
-| `/shopping-list`      | Lista de cumpărături | Listă în pregătire                                                          |
-| `/favorites`          | Favorite             | Salvarea rețetelor nu este activată                                         |
-| `/assistant`          | Asistent             | AI nu este activat, nu există chat sau apel extern                          |
-| `/profile`            | Profil               | Fără date personale sau presupunerea unei sesiuni                           |
-| `/login`              | Autentificare        | Fără formular de credențiale sau autentificare simulată                     |
-| `/admin`              | Administrare         | Prezentare publică fără date, roluri sau operațiuni administrative          |
+| URL                   | Pagina               | Stare actuală                                                                    |
+| --------------------- | -------------------- | -------------------------------------------------------------------------------- |
+| `/`                   | Acasă                | Textul fundației păstrat, legături spre rețete/frigider/plan                     |
+| `/recipes`            | Rețete               | Căutare, filtre URL, paginare și compatibilitate; demo explicit prin source=demo |
+| `/recipes/[recipeId]` | Detalii rețetă       | Placeholder pentru ID valid sintactic; fără încărcarea unei rețete               |
+| `/my-fridge`          | Frigiderul meu       | Inventar în pregătire, fără afirmația că inventarul utilizatorului este gol      |
+| `/meal-planner`       | Planificator de mese | Planificare în pregătire                                                         |
+| `/shopping-list`      | Lista de cumpărături | Listă în pregătire                                                               |
+| `/favorites`          | Favorite             | Salvarea rețetelor nu este activată                                              |
+| `/assistant`          | Asistent             | AI nu este activat, nu există chat sau apel extern                               |
+| `/profile`            | Profil               | Fără date personale sau presupunerea unei sesiuni                                |
+| `/login`              | Autentificare        | Fără formular de credențiale sau autentificare simulată                          |
+| `/admin`              | Administrare         | Prezentare publică fără date, roluri sau operațiuni administrative               |
 
 `home` este ruta `/`, nu o rută suplimentară `/home`. Numele actuale cerute pentru URL-uri înlocuiesc propunerile orientative `/pantry` și `/shopping` din documentele de planificare. Modulele fizice viitoare rămân `pantry`, `shopping`, `meal-planner`; contractele API nu sunt redenumite și nu sunt implementate acum.
 

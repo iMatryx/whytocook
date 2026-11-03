@@ -69,7 +69,7 @@ test("ingredient catalog on PostgreSQL", async (suite) => {
         seen.add(item.id);
       }
     }
-    assert.equal(seen.size, 32);
+    assert.equal(seen.size, 56); // 32 original + 24 explicit recipe references.
     await db.exec("RESET ROLE");
     await db.exec("UPDATE app_private.ingredients SET is_active=false WHERE slug='rosii'");
     await db.exec("SET ROLE anon");

@@ -1,7 +1,6 @@
 import { expect, test } from "@playwright/test";
 
 for (const route of [
-  "/my-fridge",
   "/meal-planner",
   "/shopping-list",
   "/favorites",
