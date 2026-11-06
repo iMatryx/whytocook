@@ -1,5 +1,5 @@
-export { recipeBundleSchema, recipeSeedSchema, sourceSchema } from "./recipe-bundle.schema";
-export type { RecipeSeed, RecipeBundle, RecipeCatalog } from "./recipe-bundle.schema";
+export { recipeBundleSchema, recipeSeedSchema, sourceSchema } from "./recipe-bundle.schema.ts";
+export type { RecipeSeed, RecipeBundle, RecipeCatalog } from "./recipe-bundle.schema.ts";
 export {
   recipeFiltersSchema,
   searchRecipeSchema,
@@ -15,6 +15,7 @@ export {
   recipeActionRequestSchema,
   recipeActionCommandSchema,
   recipeActionStateSchema,
+  fullNutritionSchema,
 } from "./detail.schema.ts";
 export type {
   RecipeDetailRequest,
@@ -31,3 +32,5 @@ export type {
   RecipeSearchResponse,
   RecipeCompatibility,
 } from "./search.schema.ts";
+
+export { organizationRequestSchema, organizationSnapshotSchema } from "./organization.schema.ts";

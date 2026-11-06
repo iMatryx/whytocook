@@ -268,3 +268,94 @@ npm run test:db
 
 Instrumentele CLI nu aplică SQL și nu accesează secrete sau servicii externe.
 Nu există UI nou sau integrare matching în această sarcină.
+
+## Pagina rețetei și Cooking — etapa 4
+
+`/recipes/<slug>` afișează ingredientele raportate la inventar, porții ajustabile,
+alergeni, nutriție cu sursă, echipament, pași și rețete similare. Cooking include
+pași mari, progres, cronometre locale și Screen Wake Lock opțional. Favoritele,
+cumpărăturile și marcarea ca gătită funcționează local pentru invitați și prin RPC
+pentru rețete publicate/conturi. Consumul din frigider cere o confirmare separată.
+
+Demonstrare: `/recipes/terci-de-ovaz-cu-mere?source=demo`. Fotografia este generată
+cu AI și etichetată demonstrativ; nutriția necunoscută rămâne indisponibilă.
+Migrația 17 se aplică după 01–16, prin procesul existent, nu de build.
+
+- [Comportament, API, configurare și verificări manuale](docs/recipes/COOKING.md)
+- [Fișiere create/modificate](docs/recipes/COOKING-FILES.md)
+- [Rezultatele verificărilor](docs/recipes/COOKING-VERIFICATION.md)
+
+`npm test` include modelele Cooking. După build, `npm run test:recipe-detail-routes`
+verifică handlerii compilați; `npm run test:e2e -- tests/e2e/cooking.spec.ts` verifică
+interacțiunile browser. Nu s-au adăugat dependențe pentru această sarcină.
+
+## Favorite, colecții și istoric — etapa 5
+
+`/favorites` permite salvarea și eliminarea favoritelor, colecții personalizate
+(Fitness, Rapid etc.) și istoricul preparărilor confirmate în Cooking. Colecțiile
+sunt independente de favorite. Ștergerea colecțiilor și istoricului cere confirmare.
+Invitații folosesc stocarea locală existentă; conturile folosesc PostgreSQL prin
+RPC și RLS, fără import automat al datelor locale.
+
+Migrația 18 se aplică după 01–17 în dezvoltare/staging prin procesul existent:
+`supabase migration up --local`. Nu este aplicată automat și nu a fost aplicată
+unui mediu live în această sesiune. Nu s-au adăugat dependențe.
+
+- [Comportament, limite, fișiere și verificări manuale](docs/recipes/ORGANIZATION.md)
+- [Rezultate reale ale verificărilor](docs/recipes/ORGANIZATION-VERIFICATION.md)
+
+```sh
+npm run test:organization
+npm run test:db
+npm run build -- --webpack
+npm run test:organization-routes
+npm run test:e2e -- tests/e2e/organization.spec.ts
+```
+
+## Lista inteligentă de cumpărături — etapa 5
+
+`/shopping-list` adună necesarul mai multor rețete, convertește unități compatibile
+și scade stocul o singură dată pentru selecția completă. Include categorii, rânduri
+manuale, editare/bifare, partajare text și subtotaluri numai din prețuri introduse,
+cu dată, monedă și incertitudine. Transferul în frigider cere confirmare explicită.
+
+Invitații au stocare locală cu jurnal de recuperare; conturile folosesc lista
+activă existentă și tranzacții PostgreSQL cu RLS/replay. Migrația 19 se aplică după
+01–18 prin procesul existent, nu de build. Fără Supabase poți demonstra prin
+`/shopping-list?source=demo`. Nu s-au adăugat dependențe sau prețuri presupuse.
+
+- [Comportament, limite și verificare manuală](docs/shopping/SMART-SHOPPING.md)
+- [Fișiere create/modificate](docs/shopping/FILES.md)
+- [Rezultate reale](docs/shopping/VERIFICATION.md)
+
+```sh
+npm run test:shopping
+npm run test:db
+npm run build -- --webpack
+npm run test:shopping-routes
+npm run test:e2e -- tests/e2e/shopping.spec.ts
+```
+
+## Planificator alimentar pe 7 zile — etapa 5
+
+`/meal-planner` include mic dejun, prânz, cină și gustări, porții, mutarea meselor,
+copiere într-o săptămână goală, meal prep și shopping consolidat cu confirmare.
+Stocul este alocat virtual o singură dată pe săptămână; planificarea nu înseamnă
+consum. Nutriția verificată și costurile datate au subtotaluri explicite; plafonul
+de buget semnalează depășiri și date necunoscute.
+
+Invitații au persistență locală; conturile folosesc PostgreSQL cu RLS, revizii și
+replay. Migrația 20 se aplică după 01–19, separat de build. Demonstrație locală:
+`/meal-planner?source=demo`. Nu s-au adăugat dependențe.
+
+- [Comportament, limite și verificări manuale](docs/planner/MEAL-PLANNER.md)
+- [Fișiere create/modificate](docs/planner/FILES.md)
+- [Rezultate reale](docs/planner/VERIFICATION.md)
+
+```sh
+npm run test:planner
+npm run test:db
+npm run build -- --webpack
+npm run test:planner-routes
+npm run test:e2e -- tests/e2e/planner.spec.ts
+```

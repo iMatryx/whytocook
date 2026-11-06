@@ -1,10 +1,12 @@
 import { z } from "zod";
 import { recipeActionCommandSchema } from "../contracts/detail.schema.ts";
+import { recipeCollectionSchema } from "../contracts/organization.schema.ts";
 export const localRecipeActionsKey = "cookly-recipe-actions-v1";
-const stateSchema = z
+export const localRecipeActionsSchema = z
   .object({
     version: z.literal(1),
     revision: z.number().int().min(0),
+    collections: z.array(recipeCollectionSchema).max(50).default([]),
     favorites: z.array(z.string().max(220)).max(500),
     cooked: z
       .array(
@@ -34,7 +36,7 @@ const stateSchema = z
     operations: z.array(z.object({ id: z.string(), signature: z.string() }).strict()).max(100),
   })
   .strict();
-export type LocalRecipeActions = z.infer<typeof stateSchema>;
+export type LocalRecipeActions = z.infer<typeof localRecipeActionsSchema>;
 type StoragePort = {
   getItem: (key: string) => string | null;
   setItem: (key: string, value: string) => void;
@@ -42,8 +44,16 @@ type StoragePort = {
 export function readLocalActions(storage: Pick<StoragePort, "getItem">): LocalRecipeActions {
   const raw = storage.getItem(localRecipeActionsKey);
   return raw === null
-    ? { version: 1, revision: 0, favorites: [], cooked: [], shopping: [], operations: [] }
-    : stateSchema.parse(JSON.parse(raw));
+    ? {
+        version: 1,
+        revision: 0,
+        favorites: [],
+        collections: [],
+        cooked: [],
+        shopping: [],
+        operations: [],
+      }
+    : localRecipeActionsSchema.parse(JSON.parse(raw));
 }
 export function writeLocalAction(
   storage: StoragePort,
@@ -82,7 +92,7 @@ export function writeLocalAction(
       ...state.shopping,
       ...command.items.map((i, index) => ({ ...i, id: `${operationId}:${index}`, recipeKey })),
     ];
-  const checked = stateSchema.parse(next);
+  const checked = localRecipeActionsSchema.parse(next);
   storage.setItem(localRecipeActionsKey, JSON.stringify(checked));
   return checked;
 }

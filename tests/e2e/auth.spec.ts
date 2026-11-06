@@ -1,19 +1,22 @@
 import { expect, test } from "@playwright/test";
 
-for (const route of [
-  "/meal-planner",
-  "/shopping-list",
-  "/favorites",
-  "/assistant",
-  "/profile",
-  "/admin",
-]) {
+for (const route of ["/assistant", "/profile", "/admin"]) {
   test(`anonymous ${route} redirects to login`, async ({ page }) => {
     await page.goto(route);
     await expect(page).toHaveURL(new RegExp(`/login\\?next=${encodeURIComponent(route)}$`));
     await expect(page.getByRole("heading", { level: 1, name: "Bine ai revenit" })).toBeVisible();
   });
 }
+test("favorites and organization are available to guests", async ({ page }) => {
+  await page.goto("/favorites");
+  await expect(page).toHaveURL(/\/favorites$/);
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Favorite, colecții și istoric", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Nu ai rețete favorite", exact: true }),
+  ).toBeVisible();
+});
 test("recipes remain public and registration/recovery forms are accessible", async ({ page }) => {
   await page.goto("/recipes");
   await expect(page).toHaveURL(/\/recipes$/);

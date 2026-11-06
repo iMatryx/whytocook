@@ -125,6 +125,26 @@ test("detail restrictions, missing photo, invalid URL and server error have reco
   await expect(page.getByRole("alert")).toBeVisible();
   await page.goto("/recipes/no-such-recipe?source=demo");
   await expect(page.getByRole("heading", { name: "Rețeta nu a fost găsită" })).toBeVisible();
+  await page.goto("/recipes/terci-de-ovaz-cu-banana?source=demo");
+  await expect(
+    page.getByText("Nu este disponibilă o fotografie pentru această rețetă.", { exact: true }),
+  ).toBeVisible();
+  let fail = true;
+  await page.route("**/api/v1/recipes/detail", (route) =>
+    fail
+      ? route.fulfill({
+          status: 503,
+          json: { error: { message: "Serviciu indisponibil pentru test." } },
+        })
+      : route.continue(),
+  );
+  await page.reload();
+  await expect(page.getByRole("heading", { name: "Rețeta nu poate fi încărcată" })).toBeVisible();
+  fail = false;
+  await page.getByRole("button", { name: "Reîncearcă", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Terci de ovăz cu banană", exact: true }),
+  ).toBeVisible();
 });
 test("Cooking survives pantry revalidation on hide/focus and reacquires only an opted-in wake lock", async ({
   page,
@@ -168,9 +188,92 @@ test("Cooking survives pantry revalidation on hide/focus and reacquires only an 
   await expect(page.getByText("Ecranul este menținut aprins.", { exact: true })).toBeVisible();
   const stats = await page.evaluate(
     () =>
-      (window as Window & { cookingWakeStats: { requests: number; releases: number } })
+      (window as unknown as { cookingWakeStats: { requests: number; releases: number } })
         .cookingWakeStats,
   );
   expect(stats).toEqual({ requests: 2, releases: 1 });
   await page.keyboard.press("Escape");
+});
+test("memory-only Cooking survives refresh and newly blocked recipes close old dialogs", async ({
+  page,
+}) => {
+  await guest(page);
+  await page.addInitScript(() =>
+    Object.defineProperty(window, "sessionStorage", {
+      configurable: true,
+      value: {
+        getItem: () => {
+          throw new Error("Storage unavailable");
+        },
+        setItem: () => {
+          throw new Error("Storage unavailable");
+        },
+        removeItem: () => {
+          throw new Error("Storage unavailable");
+        },
+      },
+    }),
+  );
+  let blocked = false;
+  await page.route("**/api/v1/recipes/detail", async (route) => {
+    const response = await route.fetch();
+    const body = await response.json();
+    await route.fulfill({
+      response,
+      json: {
+        ...body,
+        blocked,
+        blockReason: blocked ? "Restricțiile actualizate exclud rețeta." : null,
+      },
+    });
+  });
+  await page.goto("/recipes/terci-de-ovaz-cu-mere?source=demo");
+  await page.getByRole("button", { name: "Începe Cooking", exact: true }).click();
+  await page.getByRole("button", { name: "Pasul următor" }).click();
+  await page.evaluate(() => window.dispatchEvent(new Event("focus")));
+  await expect(page.getByRole("heading", { name: "Pasul 2", exact: true })).toBeVisible();
+  blocked = true;
+  await page.evaluate(() => window.dispatchEvent(new Event("focus")));
+  await expect(page.getByRole("button", { name: "Începe Cooking", exact: true })).toBeDisabled();
+  await expect(page.getByRole("dialog")).not.toBeVisible();
+});
+test("favorite state refreshes from local actions changed in another context", async ({ page }) => {
+  await guest(page);
+  await page.goto("/recipes/terci-de-ovaz-cu-mere?source=demo");
+  await page.getByRole("button", { name: "Adaugă la favorite", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Elimină din favorite", exact: true }),
+  ).toBeVisible();
+  await page.evaluate(() => {
+    const state = JSON.parse(localStorage.getItem("cookly-recipe-actions-v1")!);
+    state.favorites = [];
+    state.revision++;
+    localStorage.setItem("cookly-recipe-actions-v1", JSON.stringify(state));
+    window.dispatchEvent(new Event("focus"));
+  });
+  await expect(page.getByRole("button", { name: "Adaugă la favorite", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Adaugă la favorite", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Elimină din favorite", exact: true }),
+  ).toBeVisible();
+});
+test("favorite storage write failures remain visible after the read refresh", async ({ page }) => {
+  await guest(page);
+  await page.addInitScript(() => {
+    const original = Storage.prototype.setItem;
+    Storage.prototype.setItem = function (key, value) {
+      if (key === "cookly-recipe-actions-v1")
+        throw new DOMException("Stocare plină pentru test", "QuotaExceededError");
+      return original.call(this, key, value);
+    };
+  });
+  await page.goto("/recipes/terci-de-ovaz-cu-mere?source=demo");
+  await page.getByRole("button", { name: "Adaugă la favorite", exact: true }).click();
+  await expect(
+    page.getByRole("alert").filter({ hasText: "Stocare plină pentru test" }),
+  ).toBeVisible();
+  await expect(page.getByRole("button", { name: "Adaugă la favorite", exact: true })).toBeEnabled();
+  await expect(
+    page.getByRole("alert").filter({ hasText: "Stocare plină pentru test" }),
+  ).toBeVisible();
 });

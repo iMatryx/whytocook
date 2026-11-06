@@ -16,7 +16,16 @@ export function createRecipeRpc(
         | "recipe_search_context"
         | "recipe_detail_metadata"
         | "get_recipe_actions"
-        | "apply_recipe_action",
+        | "apply_recipe_action"
+        | "get_recipe_organization"
+        | "mutate_recipe_organization"
+        | "smart_shopping_catalog"
+        | "smart_shopping_snapshot"
+        | "smart_shopping_mutate"
+        | "meal_planner_metadata"
+        | "meal_planner_snapshot"
+        | "meal_planner_mutate"
+        | "meal_planner_export",
       body: unknown = {},
     ): Promise<unknown> {
       if (
@@ -26,6 +35,15 @@ export function createRecipeRpc(
           "recipe_detail_metadata",
           "get_recipe_actions",
           "apply_recipe_action",
+          "get_recipe_organization",
+          "mutate_recipe_organization",
+          "smart_shopping_catalog",
+          "smart_shopping_snapshot",
+          "smart_shopping_mutate",
+          "meal_planner_metadata",
+          "meal_planner_snapshot",
+          "meal_planner_mutate",
+          "meal_planner_export",
         ].includes(path)
       )
         throw new RecipeSearchError("UNAVAILABLE");
@@ -33,6 +51,13 @@ export function createRecipeRpc(
         "recipe_search_context",
         "get_recipe_actions",
         "apply_recipe_action",
+        "get_recipe_organization",
+        "mutate_recipe_organization",
+        "smart_shopping_snapshot",
+        "smart_shopping_mutate",
+        "meal_planner_snapshot",
+        "meal_planner_mutate",
+        "meal_planner_export",
       ].includes(path);
       if (privateCall && !token) throw new AccessError("AUTH_REQUIRED");
       try {

@@ -71,6 +71,20 @@ test("recipe actions isolate accounts, replay atomically and never consume pantr
       JSON.stringify(command),
     ]);
   await actor(a);
+  const ingredient = await one("SELECT id FROM api.ingredients WHERE slug='rosii'");
+  await one("SELECT api.mutate_my_pantry($1,$2::jsonb)", [
+    crypto.randomUUID(),
+    JSON.stringify({
+      kind: "create",
+      id: crypto.randomUUID(),
+      ingredientId: ingredient,
+      quantity: "300",
+      unitCode: "g",
+      location: "fridge",
+      expiresOn: null,
+    }),
+  ]);
+  const pantryBefore = await one("SELECT api.get_my_pantry()");
   assert.equal((await action({ kind: "favorite", enabled: true })).favorite, true);
   await actor(b);
   assert.equal((await one("SELECT api.get_recipe_actions('cooking-fixture')")).favorite, false);
@@ -106,8 +120,13 @@ test("recipe actions isolate accounts, replay atomically and never consume pantr
   assert.ok(cooked.lastCookedAt);
   assert.equal(
     await one("SELECT count(*)::int FROM api.my_pantry"),
-    0,
+    1,
     "actions never create or consume stock",
+  );
+  assert.deepEqual(
+    await one("SELECT api.get_my_pantry()"),
+    pantryBefore,
+    "every existing stock quantity and revision is unchanged",
   );
   await assert.rejects(
     action({ kind: "favorite", enabled: false }, crypto.randomUUID(), 99),

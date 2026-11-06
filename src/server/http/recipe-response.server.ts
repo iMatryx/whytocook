@@ -40,3 +40,71 @@ export function recipeErrorResponse(error: unknown, id: string) {
   const [status, message] = info[error.code];
   return privateJson({ error: { code: error.code, message, requestId: id } }, id, status);
 }
+export function organizationErrorResponse(error: unknown, id: string) {
+  if (
+    error instanceof RecipeSearchError &&
+    (error.code === "INVALID_REQUEST" || error.code === "NOT_FOUND")
+  ) {
+    return privateJson(
+      {
+        error: {
+          code: error.code,
+          message:
+            error.code === "NOT_FOUND"
+              ? "Colecția sau rețeta nu mai este disponibilă. Reîncarcă lista."
+              : "Verifică numele unic al colecției, rețeta și limitele afișate.",
+          requestId: id,
+        },
+      },
+      id,
+      error.code === "NOT_FOUND" ? 404 : 400,
+    );
+  }
+  return recipeErrorResponse(error, id);
+}
+export function shoppingErrorResponse(error: unknown, id: string) {
+  if (
+    error instanceof RecipeSearchError &&
+    (error.code === "INVALID_REQUEST" || error.code === "NOT_FOUND" || error.code === "CONFLICT")
+  )
+    return privateJson(
+      {
+        error: {
+          code: error.code,
+          message:
+            error.code === "CONFLICT"
+              ? "Lista s-a modificat. Reîncarcă și verifică rândurile înainte de confirmare."
+              : error.code === "NOT_FOUND"
+                ? "Rețeta sau rândul nu mai este disponibil."
+                : "Verifică porțiile, restricțiile profilului, cantitățile și unitățile permise.",
+          requestId: id,
+        },
+      },
+      id,
+      error.code === "CONFLICT" ? 409 : error.code === "NOT_FOUND" ? 404 : 400,
+    );
+  return recipeErrorResponse(error, id);
+}
+export function plannerErrorResponse(error: unknown, id: string) {
+  if (
+    error instanceof RecipeSearchError &&
+    (error.code === "INVALID_REQUEST" || error.code === "NOT_FOUND" || error.code === "CONFLICT")
+  )
+    return privateJson(
+      {
+        error: {
+          code: error.code,
+          message:
+            error.code === "CONFLICT"
+              ? "Planul, stocul sau rândurile exportate s-au modificat. Reîncarcă și revizuiește înainte de confirmare."
+              : error.code === "NOT_FOUND"
+                ? "Masa, săptămâna sau versiunea rețetei nu mai este disponibilă."
+                : "Verifică intervalul de 7 zile, porțiile, pregătirea în avans și bugetul. În cont sunt permise numai rețete publicate.",
+          requestId: id,
+        },
+      },
+      id,
+      error.code === "CONFLICT" ? 409 : error.code === "NOT_FOUND" ? 404 : 400,
+    );
+  return recipeErrorResponse(error, id);
+}

@@ -123,7 +123,7 @@ export function RecipeDetailView(props: DetailProps) {
       {data && (
         <div hidden={!active} inert={!active}>
           <RecipeDetailContent
-            key={`${data.source}:${data.recipe.key}:${data.recipe.revision}:${data.servings}:${data.accountId}`}
+            key={`${data.source}:${data.recipe.key}:${data.recipe.revision}:${data.servings}:${data.accountId}:${data.blocked}`}
             data={data}
             active={active}
             query={parsed.data}
@@ -570,7 +570,7 @@ function RecipeDetailContent({
       </section>
       {cooking && (
         <CookingMode
-          visible={active}
+          visible={active && !data.blocked}
           title={r.title}
           steps={r.steps}
           timers={data.metadata.stepTimers}
@@ -585,7 +585,7 @@ function RecipeDetailContent({
           }}
         />
       )}
-      <Dialog open={shopping && active} onOpenChange={setShopping}>
+      <Dialog open={shopping && active && !data.blocked} onOpenChange={setShopping}>
         <DialogContent
           title="Verifică lista de cumpărături"
           description="Ajustează deficitul măsurat înainte de confirmare. Cantitățile nemăsurate din inventar pot schimba necesarul."
@@ -628,7 +628,7 @@ function RecipeDetailContent({
           </form>
         </DialogContent>
       </Dialog>
-      <Dialog open={finish && active} onOpenChange={setFinish}>
+      <Dialog open={finish && active && !data.blocked} onOpenChange={setFinish}>
         <DialogContent
           title="Ai terminat de gătit?"
           description="Marcarea rețetei și scăderea ingredientelor sunt acțiuni separate. Nimic nu se scade automat."

@@ -2,10 +2,16 @@ import { expect, test } from "@playwright/test";
 
 const routes = [
   ["/", "Cookly începe aici."],
-  ["/recipes", "Rețete"],
-  ["/recipes/demo", "Detalii rețetă"],
+  ["/recipes?source=demo", "Rețete pentru ce ai acasă"],
+  ["/recipes/terci-de-ovaz-cu-mere?source=demo", "Terci de ovăz cu mere"],
   ["/login", "Bine ai revenit"],
 ] as const;
+
+test.beforeEach(async ({ page }) => {
+  await page.route("**/api/v1/pantry", (route) =>
+    route.fulfill({ status: 401, json: { error: { code: "AUTH_REQUIRED" } } }),
+  );
+});
 
 for (const [path, heading] of routes) {
   test(`shell route ${path} renders a coherent server page`, async ({ page }) => {
@@ -23,14 +29,14 @@ for (const [path, heading] of routes) {
 }
 
 test("desktop navigation tracks details, breadcrumbs and browser history", async ({ page }) => {
-  await page.goto("/recipes");
+  await page.goto("/recipes?source=demo&q=terci");
   const nav = page.getByRole("navigation", { name: "Navigare principală", exact: true });
   const recipes = nav.getByRole("link", { name: "Rețete", exact: true });
   const home = nav.getByRole("link", { name: "Acasă", exact: true });
   await expect(recipes).toHaveAttribute("aria-current", "page");
   await expect(home).not.toHaveAttribute("aria-current");
-  await page.getByRole("link", { name: "Vezi structura unei rețete" }).click();
-  await expect(page).toHaveURL(/\/recipes\/demo$/);
+  await page.getByRole("link", { name: "Terci de ovăz cu mere", exact: true }).click();
+  await expect(page).toHaveURL(/\/recipes\/terci-de-ovaz-cu-mere\?source=demo$/);
   await expect(recipes).toHaveAttribute("aria-current", "location");
   const breadcrumbs = page.getByRole("navigation", { name: "Traseu de navigare", exact: true });
   await expect(breadcrumbs.getByRole("link", { name: "Rețete", exact: true })).toHaveAttribute(

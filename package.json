@@ -14,7 +14,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "node --test src/config/env/schema.test.ts tests/architecture/import-boundaries.test.mjs tests/ui-kit/*.test.* tests/shell/*.test.ts && npm run test:security && npm run test:ingredients && npm run test:pantry && npm run test:recipes && npm run test:matching",
+    "test": "node --test src/config/env/schema.test.ts tests/architecture/import-boundaries.test.mjs tests/ui-kit/*.test.* tests/shell/*.test.ts && npm run test:security && npm run test:ingredients && npm run test:pantry && npm run test:recipes && npm run test:matching && npm run test:organization && npm run test:shopping && npm run test:planner",
     "test:ui": "node --test tests/ui-kit/*.test.*",
     "test:architecture": "node --test tests/architecture/import-boundaries.test.mjs",
     "test:unit": "node --test src/config/env/schema.test.ts",
@@ -40,7 +40,13 @@
     "matching:demo": "node scripts/matching/demo.ts",
     "matching:benchmark": "node scripts/matching/benchmark.ts",
     "test:recipe-detail-routes": "node --conditions=react-server --test tests/recipes/detail-routes.smoke.mjs",
-    "test:recipe-search-routes": "node --conditions=react-server --test tests/recipes/search-routes.smoke.mjs"
+    "test:recipe-search-routes": "node --conditions=react-server --test tests/recipes/search-routes.smoke.mjs",
+    "test:organization-routes": "node --conditions=react-server --test tests/organization/routes.smoke.mjs",
+    "test:shopping": "node --test tests/shopping/*.test.ts",
+    "test:shopping-routes": "node --conditions=react-server --test tests/shopping/routes.smoke.mjs",
+    "test:organization": "node --test tests/organization/*.test.ts",
+    "test:planner": "node --test tests/planner/*.test.ts",
+    "test:planner-routes": "node --conditions=react-server --test tests/planner/routes.smoke.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.0",

@@ -13,10 +13,10 @@ cu inventar guest local și inventar privat pentru cont; detalii în
 | --------------------- | -------------------- | -------------------------------------------------------------------------------- |
 | `/`                   | Acasă                | Textul fundației păstrat, legături spre rețete/frigider/plan                     |
 | `/recipes`            | Rețete               | Căutare, filtre URL, paginare și compatibilitate; demo explicit prin source=demo |
-| `/recipes/[recipeId]` | Detalii rețetă       | Placeholder pentru ID valid sintactic; fără încărcarea unei rețete               |
+| `/recipes/[recipeId]` | Detalii rețetă       | Detaliu pe slug, inventar, porții și Cooking; vezi docs/recipes/COOKING.md       |
 | `/my-fridge`          | Frigiderul meu       | Inventar în pregătire, fără afirmația că inventarul utilizatorului este gol      |
-| `/meal-planner`       | Planificator de mese | Planificare în pregătire                                                         |
-| `/shopping-list`      | Lista de cumpărături | Listă în pregătire                                                               |
+| `/meal-planner`       | Planificator de mese | Calendar 7 zile, porții, prep, buget și shopping; guest local și cont cu RLS     |
+| `/shopping-list`      | Lista de cumpărături | Listă inteligentă, guest local și cont cu RLS                                    |
 | `/favorites`          | Favorite             | Salvarea rețetelor nu este activată                                              |
 | `/assistant`          | Asistent             | AI nu este activat, nu există chat sau apel extern                               |
 | `/profile`            | Profil               | Fără date personale sau presupunerea unei sesiuni                                |
@@ -58,7 +58,7 @@ Linkul global „Sari la conținut” este păstrat. Navigarea permite deschider
 
 `PagePlaceholder` este Server Component cu h1, descriere, status „În pregătire” și o secțiune h2. Textele nu presupun că utilizatorul este conectat sau că un inventar/catalog a fost deja interogat. Nu există butoane false de salvare, login sau administrare.
 
-Ruta de detaliu validează `recipeId` cu Zod: 1–128 caractere, litere ASCII, cifre, `_` și `-`. Aceasta este numai validare de rutare, nu o decizie despre schema viitoare de ID-uri DB sau existența unei rețete. ID invalid → `notFound()`. Un ID sintactic valid, inclusiv `demo`, afișează explicit placeholderul fără acces DB.
+Ruta păstrează numele structural `[recipeId]`, dar acceptă sluguri canonice lowercase, maximum 100 caractere. Slug invalid → `notFound()`. Existența este verificată separat de API-ul de detaliu: numai published/current implicit sau colecția demonstrativă la `source=demo`. Un slug inexistent produce răspuns API 404 și stare de negăsit în UI. Pagina include Cooking; vezi [COOKING.md](../recipes/COOKING.md).
 
 `(shell)/loading.tsx` păstrează cadrul și afișează un skeleton cu status accesibil; nu introduce întârzieri artificiale. `(shell)/error.tsx` oferă eroare recuperabilă și reset. Pentru 404 în shell se randează numai conținutul, iar pentru un URL complet necunoscut, root not-found construiește cadrul: nu se dublează main/header.
 
@@ -87,3 +87,15 @@ Opțiunea Webpack verifică producția în sandbox fără portul intern folosit 
 Runnerul Playwright pornește propriul server prin `npm run dev`, fără să instaleze pachete și fără să reutilizeze un server necunoscut. Sunt definite 16 scenarii de shell (11 rute plus navigare/istoric/404/cont), 23 în total cu suitele anterioare. Instalarea Playwright curentă cere Chromium revision 1248; cache-ul local observat are 1243. Un browser compatibil poate necesita `npm exec playwright install chromium` înainte de rulare.
 
 Rezultatele reale și inventarul fișierelor sunt în [SHELL-VERIFICATION.md](SHELL-VERIFICATION.md). Manual: verifică toate URL-urile, desktop/mobil la 360 px, zoom 200%, tastatură/cititor de ecran, focus după meniu/istoric, tema și conținutul loading/error. Nu începe etapa următoare fără cerere separată.
+
+Actualizare etapa 5: `/favorites` este publică pentru starea locală a invitaților;
+conținutul conturilor rămâne privat și verificat la API. Colecțiile, istoricul și
+migrația 18 sunt descrise în [ORGANIZATION.md](../recipes/ORGANIZATION.md).
+
+Actualizare lista inteligentă: `/shopping-list` este publică pentru invitați,
+cu datele contului verificate prin API. Migrația 19 și agregarea/transferul sunt
+în [SMART-SHOPPING.md](../shopping/SMART-SHOPPING.md).
+
+Actualizare planificator: `/meal-planner` este publică pentru invitați și permite
+persistență privată în cont. Calendarul, alocarea virtuală, bugetul și migrația 20
+sunt documentate în [MEAL-PLANNER.md](../planner/MEAL-PLANNER.md).

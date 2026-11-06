@@ -56,12 +56,15 @@ export function CookingMode({
     [warning, setWarning] = useState<string | null>(null),
     [now, setNow] = useState(0);
   const persist = useRef(true),
-    heading = useRef<HTMLHeadingElement | null>(null);
+    heading = useRef<HTMLHeadingElement | null>(null),
+    initializedKey = useRef<string | null>(null);
   const [awake, setAwake] = useState<ScreenAwakeState>("off"),
     [enabled, setEnabled] = useState(false);
   const controller = useRef<ReturnType<typeof createScreenAwake> | null>(null);
   useEffect(() => {
     const timer = setTimeout(() => {
+      if (initializedKey.current === sessionKey) return;
+      initializedKey.current = sessionKey;
       try {
         const raw = sessionStorage.getItem(sessionKey),
           stored = raw === null ? initial : cookingSessionSchema.parse(JSON.parse(raw));

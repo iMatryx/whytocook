@@ -31,13 +31,31 @@ export function useRecipeActions(data: RecipeDetailResponse, active = true) {
     activeContext.current = active;
   }, [active]);
   const ephemeral = data.accountId !== null && data.source === "demo";
+  const observedActions = useRef<RecipeActionState | null>(null);
   useEffect(() => {
     alive.current = true;
-    if (remote)
-      return () => {
-        alive.current = false;
-      };
+    return () => {
+      alive.current = false;
+    };
+  }, []);
+  useEffect(() => {
+    if (remote) {
+      // A response racing a pending command must not overwrite that command's result.
+      if (observedActions.current === data.actions) return;
+      observedActions.current = data.actions;
+      if (!active || lock.current || !data.actions) return;
+      const snapshot = data.actions;
+      const timer = setTimeout(() => {
+        if (!lock.current) {
+          setState(snapshot);
+          setReady(true);
+        }
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+    if (!active || busy) return;
     const timer = setTimeout(() => {
+      if (lock.current) return;
       try {
         const storage = ephemeral ? { getItem: () => memory.current } : localStorage,
           stored = readLocalActions(storage);
@@ -49,14 +67,12 @@ export function useRecipeActions(data: RecipeDetailResponse, active = true) {
         });
         setReady(true);
       } catch {
+        setReady(false);
         setError("Acțiunile locale nu pot fi citite. Datele nu au fost înlocuite.");
       }
     }, 0);
-    return () => {
-      alive.current = false;
-      clearTimeout(timer);
-    };
-  }, [key, remote, ephemeral]);
+    return () => clearTimeout(timer);
+  }, [key, remote, ephemeral, active, busy, data.actions]);
   async function run(command: RecipeActionCommand): Promise<string | null> {
     if (!active || !ready || lock.current) return "Așteaptă încărcarea sau salvarea acțiunilor.";
     lock.current = true;

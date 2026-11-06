@@ -38,14 +38,14 @@
 
 ## Verificare
 
-- [ ] Contracte și teste pentru scalare/conversii/similaritate, modele timer și
-  persistență locală/idempotency; testele sunt scrise înainte de implementare.
-- [ ] Migrația 17: fotografii și jurnal de acțiuni, reuse favorite/shopping RPC,
-  privilegii, izolare între conturi, rollback/replay și lipsa efectelor pe stoc.
-- [ ] API detail/actions, metadate, context comun și integrare cu căutarea.
-- [ ] UI detaliu, acțiuni, Cooking, wake lock, stări loading/empty/error și focus.
+- [x] Contracte și teste pentru scalare/conversii/similaritate, modele timer și
+      persistență locală/idempotency; testele sunt scrise înainte de implementare.
+- [x] Migrația 17: fotografii și jurnal de acțiuni, reuse favorite/shopping RPC,
+      privilegii, izolare între conturi, rollback/replay și lipsa efectelor pe stoc.
+- [x] API detail/actions, metadate, context comun și integrare cu căutarea.
+- [x] UI detaliu, acțiuni, Cooking, wake lock, stări loading/empty/error și focus.
 - [ ] Teste de interacțiuni browser și handlere compilate, lint/typecheck/build,
-  regresii existente, documentație și revizuire independentă.
+      regresii existente, documentație și revizuire independentă.
 
 Nu se implementează pagini complete Favorite/Shopping List, planner, AI sau admin.
 Funcționalitatea cerută se limitează la acțiunile din pagina rețetei.

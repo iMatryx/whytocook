@@ -7,11 +7,11 @@ export {
   guestStateSchema,
   quantitySchema,
   unitCodeSchema,
-} from "./pantry.schema";
+} from "./pantry.schema.ts";
 export type {
   PantryCommand,
   PantryItem,
   PantryIngredient,
   ConsumptionLine,
   GuestState,
-} from "./pantry.schema";
+} from "./pantry.schema.ts";

@@ -1,12 +1,14 @@
-import { requirePageActor } from "@/server/auth/session.server";
 import type { Metadata } from "next";
-
-import { PagePlaceholder } from "@/components/layout/page-placeholder.server";
+import { Suspense } from "react";
+import { PlannerClient } from "@/components/planner/planner.client";
 import { shellPages } from "@/config/shell-pages";
 
 export const metadata: Metadata = { title: shellPages.planner.title };
 
-export default async function MealPlannerPage() {
-  await requirePageActor("/meal-planner");
-  return <PagePlaceholder content={shellPages.planner} />;
+export default function MealPlannerPage() {
+  return (
+    <Suspense fallback={<p role="status">Se încarcă plannerul…</p>}>
+      <PlannerClient />
+    </Suspense>
+  );
 }
