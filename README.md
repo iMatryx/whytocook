@@ -31,13 +31,13 @@ cu serviciile Supabase nu sunt încă validate live în acest mediu.
 
 Node.js **24.14.0 sau o versiune 24.x ulterioară**, conform `.nvmrc` și `engines`.
 
-Checkoutul actual conține `package-lock.json` și dependențe instalate prin npm. Pentru această etapă am păstrat instalarea și lockfile-ul existente, fără dependențe noi. Pentru reproducerea acestui checkout:
+Proiectul folosește npm și `package-lock.json` existent. Instalează reproductibil versiunile fixate în lockfile:
 
 ```sh
 npm ci
 ```
 
-Planul inițial prevede pnpm, care nu este disponibil acum în PATH. Reconcilierea managerului/lockfile-ului nu este făcută în etapa de routing. Scripturile individuale pot fi rulate prin `npm run <script>` pe instalarea curentă; comenzile pnpm din tabel rămân disponibile când CLI-ul este configurat. Scriptul agregat `check` folosește încă pnpm intern; în mediul actual rulează verificările individual.
+Rulează scripturile prin `npm run <script>`. Comanda `npm run check` execută în ordine verificarea formatării, lint, typecheck și testele; se oprește la primul eșec.
 
 Copiază `.env.example` în `.env.local` la rădăcină. Shell-ul pornește fără credențiale; datele catalogului cer Supabase, iar autentificarea cere și CSRF_SECRET. Nu completa niciodată secrete în fișierul versionat `.env.example`.
 
@@ -49,29 +49,29 @@ Adresă implicită: `http://127.0.0.1:3000`. Un alt port se poate selecta cu `np
 
 ## Scripturi
 
-| Comandă                             | Rol                                                                                 |
-| ----------------------------------- | ----------------------------------------------------------------------------------- |
-| `pnpm dev`                          | Server local Next.js, legat de loopback                                             |
-| `pnpm build`                        | Build de producție, fără ignorarea erorilor TypeScript                              |
-| `pnpm start`                        | Server de producție pentru buildul existent                                         |
-| `pnpm lint`                         | ESLint Next/TypeScript și reguli locale de import                                   |
-| `pnpm typecheck`                    | Generare tipuri Next și `tsc --noEmit`                                              |
-| `pnpm format` / `pnpm format:check` | Prettier; documentele istorice de produs/arhitectură sunt păstrate                  |
-| `pnpm test`                         | Teste Node pentru mediu și reguli de import                                         |
-| `pnpm test:architecture`            | Testele regulii locale de import, fără servicii externe                             |
-| `pnpm test:ui`                      | Teste native pentru filtrare, navigare combobox, etichete și contrastul tokenurilor |
-| `pnpm test:watch`                   | Aceleași teste, în watch mode                                                       |
-| `pnpm test:e2e`                     | Playwright: teme, persistență, hidratare, tastatură și 404                          |
-| `pnpm check`                        | Format, lint, typecheck și teste unitare/de arhitectură                             |
+| Comandă                                   | Rol                                                                                 |
+| ----------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm run dev`                             | Server local Next.js, legat de loopback                                             |
+| `npm run build`                           | Build de producție, fără ignorarea erorilor TypeScript                              |
+| `npm run start`                           | Server de producție pentru buildul existent                                         |
+| `npm run lint`                            | ESLint Next/TypeScript și reguli locale de import                                   |
+| `npm run typecheck`                       | Generare tipuri Next și `tsc --noEmit`                                              |
+| `npm run format` / `npm run format:check` | Prettier; documentele istorice de produs/arhitectură sunt păstrate                  |
+| `npm run test`                            | Teste Node pentru mediu și reguli de import                                         |
+| `npm run test:architecture`               | Testele regulii locale de import, fără servicii externe                             |
+| `npm run test:ui`                         | Teste native pentru filtrare, navigare combobox, etichete și contrastul tokenurilor |
+| `npm run test:watch`                      | Aceleași teste, în watch mode                                                       |
+| `npm run test:e2e`                        | Playwright: teme, persistență, hidratare, tastatură și 404                          |
+| `npm run check`                           | Format, lint, typecheck și teste unitare/de arhitectură                             |
 
 Playwright necesită browserul asociat versiunii instalate:
 
 ```sh
-pnpm exec playwright install chromium
-pnpm test:e2e
+npm exec -- playwright install chromium
+npm run test:e2e
 ```
 
-Testele E2E pornesc și opresc propriul server prin npm pe portul 3100. Nu reutilizează un server care ar putea avea altă configurație. `pnpm check` nu include build-ul sau browserul: rulează separat `pnpm build` și `pnpm test:e2e`.
+Testele E2E pornesc și opresc propriul server prin npm pe portul 3100. Nu reutilizează un server care ar putea avea altă configurație. `npm run check` nu include testele DB, build-ul sau browserul: rulează separat `npm run build` și `npm run test:e2e`.
 
 ## Mediu și secrete
 
@@ -80,7 +80,7 @@ Testele E2E pornesc și opresc propriul server prin npm pe portul 3100. Nu reuti
 - `server.ts`: configurația server și validare separată pentru integrarea Supabase sau viitoare mutații CSRF. Niciuna nu cere implicit cheia administrativă.
 - `maintenance.ts`: validator server-only pentru viitorul executor, cu secrete distincte; executorul nu este implementat.
 
-În producție sunt necesare `COOKLY_ENV=production` (sau `preview`) și `APP_BASE_URL` cu originea HTTPS reală. Nu folosi configurația development din exemplu la `pnpm start`. Pagina este randată dinamic și validează configurația server la cerere; build-ul nu contactează Supabase și nu cere cheile de mentenanță. Pentru un smoke local de producție se poate utiliza o origine HTTPS de test fără a o accesa în rețea, dar aceasta trebuie înlocuită la deployment.
+În producție sunt necesare `COOKLY_ENV=production` (sau `preview`) și `APP_BASE_URL` cu originea HTTPS reală. Nu folosi configurația development din exemplu la `npm run start`. Pagina este randată dinamic și validează configurația server la cerere; build-ul nu contactează Supabase și nu cere cheile de mentenanță. Pentru un smoke local de producție se poate utiliza o origine HTTPS de test fără a o accesa în rețea, dar aceasta trebuie înlocuită la deployment.
 
 `.env*` reale sunt ignorate. Configurația publică este inclusă la build și cere rebuild când se schimbă. Nu sunt acceptate implicit chei JWT legacy Supabase; se folosesc cheile moderne publicabile/secret, iar integrarea Auth/profil folosește numai cheia publicabilă și JWT-ul utilizatorului.
 

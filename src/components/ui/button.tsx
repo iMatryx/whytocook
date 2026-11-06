@@ -27,14 +27,43 @@ const buttonVariants = cva(
   },
 );
 
-export type ButtonProps = ComponentProps<"button"> & VariantProps<typeof buttonVariants> & ({ asChild: true; loading?: never; disabled?: never } | { asChild?: false; loading?: boolean });
+export type ButtonProps = ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> &
+  ({ asChild: true; loading?: never; disabled?: never } | { asChild?: false; loading?: boolean });
 
-function Button({ className, variant, size, asChild = false, loading = false, disabled, children, type, ...props }: ButtonProps) {
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  loading = false,
+  disabled,
+  children,
+  type,
+  ...props
+}: ButtonProps) {
   const styles = cn(buttonVariants({ variant, size, className }));
-  if (asChild) return <Slot data-slot="button" className={styles} {...props}>{children}</Slot>;
+  if (asChild)
+    return (
+      <Slot data-slot="button" className={styles} {...props}>
+        {children}
+      </Slot>
+    );
   return (
-    <button data-slot="button" type={type ?? "button"} className={styles} disabled={disabled || loading} aria-busy={loading || undefined} {...props}>
-      {loading && <span aria-hidden="true" className="size-4 rounded-full border-2 border-current border-t-transparent motion-safe:animate-spin" />}
+    <button
+      data-slot="button"
+      type={type ?? "button"}
+      className={styles}
+      disabled={disabled || loading}
+      aria-busy={loading || undefined}
+      {...props}
+    >
+      {loading && (
+        <span
+          aria-hidden="true"
+          className="size-4 rounded-full border-2 border-current border-t-transparent motion-safe:animate-spin"
+        />
+      )}
       {children}
     </button>
   );
